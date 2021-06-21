@@ -1,0 +1,28 @@
+{
+    "name": "twrm.io",
+    "description": "Turn off 🔗 linked mentions, #️⃣ hashtags on Twitter 🐦 tweets.",
+    "version": "1.1.0",
+    "license": "GPL-2.0-only",
+    "type": "module",
+    "homepage": "https://twrm.io",
+    "bugs": "https://github.com/twrm/twrm.io/issues",
+    "author": {
+        "name": "Vasanth Developer",
+        "email": "vasanth@vasanthdeveloper.com",
+        "url": "https://vasanth.tech"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/twrm/twrm.io.git"
+    },
+    "scripts": {
+        "clean": "rm -rf dist",
+        "dev": "vite --config vite.config.js src",
+        "build": "vite --config ./vite.config.js build src",
+        "deploy": "npm run build && vercel --prod",
+        "preview": "npm run build && sirv dist -p 2020 -H"
+    },
+    "devDependencies": {
+        "vite": "^2.3.8"
+    }
+}
