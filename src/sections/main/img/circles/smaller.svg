@@ -1,11 +1,16 @@
-<svg data-aos="fade-down-left" data-aos-delay="400" class="circle smaller"
+<svg class="circle smaller"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="375" viewBox="0 0 375 375">
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500" viewBox="0 0 500 500">
     <defs>
-        <linearGradient id="a" x1="4.421" y1="-3.791" x2="-0.241" y2="1.363" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="#00EAFF"/>
-            <stop offset="1" stop-color="#3C8CE7"/>
+        <linearGradient id="a" x1="0.586" x2="0.113" y2="0.885" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#5ed1fc"/>
+            <stop offset="1" stop-color="#43CBFF"/>
         </linearGradient>
+        <clipPath id="c">
+            <rect width="500" height="500"/>
+        </clipPath>
     </defs>
-    <circle cx="187.5" cy="187.5" r="187.5" fill="url(#a)"/>
+    <g id="b" clip-path="url(#c)">
+        <path d="M358.514,65.1c42.52,70.741,62.113,157.754,29,230-32.736,72.246-118.554,130.732-213,136s-198.016-42.13-230-114c-31.608-71.493,8.45-167.991,60-244,51.927-76.009,115.28-131.247,180-132S315.618-5.643,358.514,65.1Z" transform="translate(81.486 63.902)" fill="url(#a)"/>
+    </g>
 </svg>

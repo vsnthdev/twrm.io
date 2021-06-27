@@ -13,6 +13,7 @@ module.exports = {
                 dark: '#212738',
                 twitter: '#1da1f2',
                 success: '#1DD3B0',
+                default: '#F0F2F8',
             },
             textColor: {
                 white: '#FFFFFF',
@@ -26,7 +27,8 @@ module.exports = {
             },
             height: {
                 main: '50vh',
-                mainMd: '90vh',
+                'main-md': '90vh',
+                'main-lg': '95vh',
             },
             zIndex: {
                 back: '-1',
