@@ -8,11 +8,11 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                gray: colors.blueGray,
+                green: colors.emerald,
                 primary: '#0496ff',
-                secondary: '#FF0054',
                 dark: '#212738',
                 twitter: '#1da1f2',
-                success: '#1DD3B0',
                 default: '#F0F2F8',
             },
             textColor: {
@@ -37,12 +37,20 @@ module.exports = {
         container: {
             center: true,
         },
-        colors: {
-            gray: colors.blueGray,
-            green: colors.emerald,
-        },
         fontFamily: {
-            sans: ['Manrope', 'sans-serif'],
+            sans: [
+                'Manrope',
+                'ui-sans-serif',
+                'system-ui',
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                'Roboto',
+                '"Helvetica Neue"',
+                'Arial',
+                '"Noto Sans"',
+                'sans-serif',
+            ],
         },
     },
     plugins: [require('tailwind-caret-color')()],
