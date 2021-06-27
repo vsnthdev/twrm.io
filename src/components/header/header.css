@@ -1,0 +1,7 @@
+header .social a {
+    transition: opacity 150ms ease;
+}
+
+header .logo .dot {
+    opacity: 0.5;
+}
