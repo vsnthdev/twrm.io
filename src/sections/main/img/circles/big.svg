@@ -1,0 +1,11 @@
+<svg data-aos="fade-down-right" data-aos-delay="300" class="circle big"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1061 1061">
+    <defs>
+        <linearGradient id="a" x1="0.894" y1="0.201" x2="-1.533" y2="2.362" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#3C8CE7"/>
+            <stop offset="1" stop-color="#00EAFF"/>
+        </linearGradient>
+    </defs>
+    <circle cx="530.5" cy="530.5" r="530.5" fill="url(#a)"/>
+</svg>

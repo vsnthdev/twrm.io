@@ -29,10 +29,6 @@ export default ({ mode }) =>
                         cwd: 'src',
                         tag: 'vector',
                         attr: 'src',
-                        svgo: {
-                            sortAttrs: true,
-                            cleanupAttrs: false,
-                        },
                     }),
                 ],
             }),

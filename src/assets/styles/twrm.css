@@ -9,6 +9,7 @@
 @import '../../components/header/header.css';
 
 /* Base Styles */
+@import '../../sections/main/main.css';
 
 /* Tailwind CSS */
 @tailwind base;
