@@ -20,7 +20,10 @@
         "dev": "vite --config vite.config.js src",
         "build": "vite --config ./vite.config.js build src",
         "deploy": "npm run build && vercel --prod",
-        "preview": "npm run build && sirv dist -p 2020 -H"
+        "preview": "npm run build && sirv dist -p 2020 -H",
+        "lint:html": "prettier -w 'src/**/*.html'",
+        "lint:js": "eslint --fix -c .eslintrc.cjs '**/*.+(cjs|js)'",
+        "lint": "run-p 'lint:*'"
     },
     "devDependencies": {
         "@babel/core": "^7.14.6",
@@ -31,6 +34,7 @@
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^3.4.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
+        "npm-run-all": "^4.1.5",
         "postcss": "^8.3.5",
         "postcss-import": "^14.0.2",
         "posthtml-modules": "^0.7.4",
