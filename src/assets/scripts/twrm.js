@@ -3,10 +3,12 @@
  *  Created On 24 June 2021
  */
 
+import isMobile from 'is-mobile'
 import { read } from 'localstorage-helpr'
 
 import box from '../../components/box/box'
 import localStorage from './localStorage'
+import reveal from './reveal'
 import theme from './theme'
 
 // main function
@@ -20,9 +22,6 @@ import theme from './theme'
     // initialize the core functionality
     await box()
 
-    // reveal the page by finishing AOS
-    // init({
-    //     once: true,
-    //     disable: typeof read('animations') == 'boolean' ? !read('animations') : read('animations'),
-    // })
+    // check if the device is mobile
+    if (isMobile() == false && read('motionReduced') == false) await reveal()
 })()

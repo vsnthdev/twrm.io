@@ -8,11 +8,23 @@ import { create, read } from 'localstorage-helpr'
 
 const set = (key, value) => (read(key) == null ? create(key, value) : false)
 
+const config = {
+    theme: false,
+    motionReduced: false,
+    autoCopy: navigator.clipboard ? true : false,
+    copyMethod: navigator.clipboard ? 'modern' : 'legacy',
+}
+
 // these are the default values that are created
 // upon a clean first visit.
 export default async () => {
-    set('theme', false)
-    set('animations', 'mobile')
-    set('autoCopy', navigator.clipboard ? true : false)
-    set('copyMethod', navigator.clipboard ? 'modern' : 'legacy')
+    // delete old keys from localStorage
+    for (const key in localStorage) {
+        if (Object.keys(config).includes(key) == false) localStorage.removeItem(key)
+    }
+
+    // add new keys to localStorage
+    for (const key in config) {
+        set(key, config[key])
+    }
 }
