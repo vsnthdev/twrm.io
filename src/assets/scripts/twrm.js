@@ -3,6 +3,8 @@
  *  Created On 24 June 2021
  */
 
+import './emoji.js'
+
 import isMobile from 'is-mobile'
 import { read } from 'localstorage-helpr'
 
@@ -10,6 +12,7 @@ import box from '../../components/box/box'
 import localStorage from './localStorage'
 import reveal from './reveal'
 import theme from './theme'
+import loadTweets from './tweets.js'
 
 // main function
 ;(async () => {
@@ -24,4 +27,7 @@ import theme from './theme'
 
     // check if the device is mobile
     if (isMobile() == false && read('motionReduced') == false) await reveal()
+
+    // load the tweets
+    loadTweets()
 })()

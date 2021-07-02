@@ -1,18 +1,77 @@
-/*!
- *  Cascading stylesheet for twrm.io project.
- *  Created On 24 June 2021
- */
+/* Vendor Styles */
+@import './_nprogress.css';
 
 /* Section Styles */
+@import '../../sections/main/main.css';
 
 /* Component Styles */
 @import '../../components/header/header.css';
 @import '../../components/box/box.css';
 
-/* Base Styles */
-@import '../../sections/main/main.css';
-
 /* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Other Utility Styles */
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+img.emoji {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.1em;
+    margin: 0 0.05em 0 0.1em;
+    display: inline;
+}
+
+.twitter-tweet iframe {
+    margin-top: 1rem;
+    pointer-events: none;
+    filter: drop-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06));
+}
+
+@media screen and (min-width: 768px) {
+    .twitter-tweet iframe {
+        width: 400px !important;
+    }
+
+    section#tweets .gradient::before,
+    section#tweets .gradient::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 100px;
+        z-index: 999;
+        transition: opacity 100ms ease-in;
+    }
+
+    section#tweets .gradient::before {
+        right: 0px;
+        background: linear-gradient(90deg, rgba(240, 242, 248, 0) 30%, rgba(240, 242, 248, 1) 100%);
+    }
+
+    .dark section#tweets .gradient::before {
+        background: linear-gradient(90deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 1) 85%);
+    }
+
+    section#tweets .gradient::after {
+        left: 0px;
+        background: linear-gradient(90deg, rgba(240, 242, 248, 1) 30%, rgba(240, 242, 248, 0) 100%);
+    }
+
+    .dark section#tweets .gradient::after {
+        background: linear-gradient(90deg, rgba(15, 23, 42, 1) 15%, rgba(15, 23, 42, 0) 100%);
+    }
+
+    section#tweets .gradient.no-left::before {
+        opacity: 0;
+    }
+
+    section#tweets .gradient.no-right::after {
+        opacity: 0;
+    }
+}
