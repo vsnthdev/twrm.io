@@ -9,10 +9,10 @@ import isMobile from 'is-mobile'
 import { read } from 'localstorage-helpr'
 
 import box from '../../components/box/box'
+import tweets from '../../sections/tweets/tweets'
 import localStorage from './localStorage'
 import reveal from './reveal'
 import theme from './theme'
-import loadTweets from './tweets.js'
 
 // main function
 ;(async () => {
@@ -29,5 +29,5 @@ import loadTweets from './tweets.js'
     if (isMobile() == false && read('motionReduced') == false) await reveal()
 
     // load the tweets
-    loadTweets()
+    tweets()
 })()

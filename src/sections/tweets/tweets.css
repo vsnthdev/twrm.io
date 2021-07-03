@@ -1,0 +1,58 @@
+.twitter-tweet iframe {
+    margin-top: 1rem;
+    pointer-events: none;
+    border-radius: 12px;
+    filter: drop-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06));
+    background-color: white;
+}
+
+.dark .twitter-tweet iframe {
+    background-color: black;
+}
+
+#tweets-content a {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .twitter-tweet iframe {
+        width: 400px !important;
+    }
+
+    section#tweets .gradient::before,
+    section#tweets .gradient::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 100px;
+        z-index: 999;
+        transition: opacity 100ms ease-in;
+    }
+
+    section#tweets .gradient::before {
+        right: -2px;
+        background: linear-gradient(90deg, rgba(240, 242, 248, 0) 30%, rgba(240, 242, 248, 1) 100%);
+    }
+
+    .dark section#tweets .gradient::before {
+        background: linear-gradient(90deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 1) 85%);
+    }
+
+    section#tweets .gradient::after {
+        left: -2px;
+        background: linear-gradient(90deg, rgba(240, 242, 248, 1) 30%, rgba(240, 242, 248, 0) 100%);
+    }
+
+    .dark section#tweets .gradient::after {
+        background: linear-gradient(90deg, rgba(15, 23, 42, 1) 15%, rgba(15, 23, 42, 0) 100%);
+    }
+
+    section#tweets .gradient.no-left::before {
+        opacity: 0;
+    }
+
+    section#tweets .gradient.no-right::after {
+        opacity: 0;
+    }
+}
