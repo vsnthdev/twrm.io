@@ -18,6 +18,7 @@ const date = new Date()
 
 export default ({ mode }) =>
     defineConfig({
+        publicDir: '../public',
         plugins: [
             // run PostHTML to construct the dist
             posthtmlPlugin({
@@ -51,7 +52,18 @@ export default ({ mode }) =>
             // configure and setup this website as a Progressive Web App
             VitePWA({
                 manifest: {
-                    // content of manifest
+                    name: 'twrm.io',
+                    short_name: 'twrm',
+                    orientation: 'portrait-primary',
+                    theme_color: '#1DA1F2',
+                    description: 'Turn off 🔗 linked mentions, #️⃣ hashtags on Twitter 🐦 tweets.',
+                    icons: [
+                        {
+                            src: 'img/site_icon.png',
+                            sizes: '413x413',
+                            type: 'image/png',
+                        },
+                    ],
                 },
                 workbox: {
                     runtimeCaching: [
@@ -66,7 +78,7 @@ export default ({ mode }) =>
                             },
                         },
                         {
-                            urlPattern: /.+twemoji.+|.+twimg.com.+/,
+                            urlPattern: /.+twemoji.+/,
                             handler: 'CacheFirst',
                             options: {
                                 cacheName: 'emoji',
@@ -80,16 +92,6 @@ export default ({ mode }) =>
                             handler: 'CacheFirst',
                             options: {
                                 cacheName: 'api',
-                                expiration: {
-                                    maxAgeSeconds: 60 * 60,
-                                },
-                            },
-                        },
-                        {
-                            urlPattern: /.+twitter.com.+/,
-                            handler: 'CacheFirst',
-                            options: {
-                                cacheName: 'twitter',
                                 expiration: {
                                     maxAgeSeconds: 60 * 60,
                                 },
