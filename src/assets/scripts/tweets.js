@@ -4,34 +4,55 @@
  */
 
 import axios from 'axios'
-import gsap from 'gsap'
+import isMobile from 'is-mobile'
 import nprogress from 'nprogress'
 import qs from 'qs'
 import Url from 'url-parse'
 
 const container = document.querySelector('#tweetsContent')
 
-nprogress.start()
+export const debounce = callback => {
+    let timer
 
-container.addEventListener('wheel', event => {
-    container.scrollLeft = container.scrollLeft + event.deltaY
-    event.preventDefault()
-})
-
-container.addEventListener('scroll', () => {
-    const maxScrollLeft = container.scrollWidth - container.clientWidth
-    if (container.scrollLeft != 0) {
-        container.parentElement.classList.remove('no-right')
-    } else {
-        container.parentElement.classList.add('no-right')
+    return event => {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(callback, 200, event)
     }
+}
 
-    if (container.scrollLeft == maxScrollLeft) {
-        container.parentElement.classList.add('no-left')
-    } else {
-        container.parentElement.classList.remove('no-left')
-    }
-})
+const setupHorizontalScroll = () => {
+    nprogress.start()
+
+    container.addEventListener('wheel', event => {
+        container.scrollLeft = container.scrollLeft + event.deltaY
+        event.preventDefault()
+    })
+
+    container.addEventListener('scroll', () => {
+        const maxScrollLeft = container.scrollWidth - container.clientWidth
+        if (container.scrollLeft != 0) {
+            container.parentElement.classList.remove('no-right')
+        } else {
+            container.parentElement.classList.add('no-right')
+        }
+
+        if (container.scrollLeft == maxScrollLeft) {
+            container.parentElement.classList.add('no-left')
+        } else {
+            container.parentElement.classList.remove('no-left')
+        }
+    })
+}
+
+if (isMobile() == false) setupHorizontalScroll()
+window.addEventListener(
+    'resize',
+    debounce(() => {
+        if (isMobile() == true) {
+            setupHorizontalScroll()
+        }
+    }),
+)
 
 window.setTheme = () => {
     container.querySelectorAll('iframe').forEach(frame => {
@@ -67,14 +88,11 @@ export default async () => {
 
         // add the iframe
         // eslint-disable-next-line no-undef
-        twttr.widgets.createTweetEmbed(id, anchor).then(rendered => {
+        twttr.widgets.createTweetEmbed(id, anchor).then(() => {
+            if (isMobile()) return
+
             counter = counter + 10
             counter / 100 == 1 ? nprogress.done() : nprogress.set(counter / 100)
-
-            gsap.from(rendered, {
-                opacity: 0,
-                y: 50,
-            })
         })
     }
 }

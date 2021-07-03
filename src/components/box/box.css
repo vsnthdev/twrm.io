@@ -13,6 +13,10 @@
     background-color: #e0f2fe;
 }
 
+.dark #boxContainer #box::selection {
+    background-color: #424b52;
+}
+
 #boxContainer #typing {
     color: #cbd5e1;
     transition: color 500ms ease;

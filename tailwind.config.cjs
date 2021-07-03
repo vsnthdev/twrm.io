@@ -38,8 +38,21 @@ module.exports = {
             center: true,
         },
         fontFamily: {
-            sans: [
-                'Manrope',
+            body: [
+                'Poppins',
+                'ui-sans-serif',
+                'system-ui',
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                'Roboto',
+                '"Helvetica Neue"',
+                'Arial',
+                '"Noto Sans"',
+                'sans-serif',
+            ],
+            display: [
+                'Sora',
                 'ui-sans-serif',
                 'system-ui',
                 '-apple-system',
