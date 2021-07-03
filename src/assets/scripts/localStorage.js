@@ -17,7 +17,7 @@ const config = {
 
 // these are the default values that are created
 // upon a clean first visit.
-export default async () => {
+export default () => {
     // delete old keys from localStorage
     for (const key in localStorage) {
         if (Object.keys(config).includes(key) == false) localStorage.removeItem(key)

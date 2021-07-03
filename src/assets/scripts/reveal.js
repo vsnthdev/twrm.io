@@ -6,7 +6,7 @@
 
 import gsap from 'gsap'
 
-export default () => {
+export default async ready => {
     // animate the main section
     gsap.from('main', {
         opacity: 0,
@@ -94,6 +94,11 @@ export default () => {
         ease: 'power3',
     })
 
+    // wait until the ready promise
+    // has been resolved
+    await ready
+
+    // then animate the box coming up
     gsap.from('main #boxContainer', {
         opacity: 0,
         ease: 'power3',

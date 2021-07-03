@@ -9,7 +9,7 @@ const html = document.querySelector('html')
 
 const setTheme = dark => (dark == true ? html.classList.add('dark') : html.classList.remove('dark'))
 
-export default async () => {
+export default () => {
     const userPref = read('theme')
     if (!userPref) {
         setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches)

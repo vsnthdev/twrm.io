@@ -17,17 +17,22 @@ import theme from './theme'
 // main function
 ;(async () => {
     // create localStorage default keys
-    await localStorage()
+    localStorage()
 
     // set application theme
-    await theme()
-
-    // initialize the core functionality
-    await box()
-
-    // check if the device is mobile
-    if (isMobile() == false && read('motionReduced') == false) await reveal()
+    theme()
 
     // load the tweets
     tweets()
+
+    // initialize the core functionality
+    const ready = box()
+
+    // check if the device is mobile
+    if (isMobile() == false && read('motionReduced') == false) await reveal(ready)
+
+    const { registerSW } = await import('virtual:pwa-register')
+    registerSW({
+        immediate: true,
+    })
 })()

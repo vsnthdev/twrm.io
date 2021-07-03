@@ -12,6 +12,7 @@ import { defineConfig } from 'vite'
 import banner from 'vite-plugin-banner'
 import { minifyHtml } from 'vite-plugin-html'
 import { posthtmlPlugin } from 'vite-plugin-posthtml'
+import { VitePWA } from 'vite-plugin-pwa'
 
 const date = new Date()
 
@@ -46,6 +47,57 @@ export default ({ mode }) =>
                     { month: 'long' },
                 )} ${date.getFullYear()}\n`,
             ),
+
+            // configure and setup this website as a Progressive Web App
+            VitePWA({
+                manifest: {
+                    // content of manifest
+                },
+                workbox: {
+                    runtimeCaching: [
+                        {
+                            urlPattern: /.+fonts.googleapis.com.+|.+fonts.gstatic.com.+/,
+                            handler: 'CacheFirst',
+                            options: {
+                                cacheName: 'fonts',
+                                expiration: {
+                                    maxAgeSeconds: 60 * 60,
+                                },
+                            },
+                        },
+                        {
+                            urlPattern: /.+twemoji.+|.+twimg.com.+/,
+                            handler: 'CacheFirst',
+                            options: {
+                                cacheName: 'emoji',
+                                expiration: {
+                                    maxAgeSeconds: 60 * 60,
+                                },
+                            },
+                        },
+                        {
+                            urlPattern: /.+api.vasanthdeveloper.com.+/,
+                            handler: 'CacheFirst',
+                            options: {
+                                cacheName: 'api',
+                                expiration: {
+                                    maxAgeSeconds: 60 * 60,
+                                },
+                            },
+                        },
+                        {
+                            urlPattern: /.+twitter.com.+/,
+                            handler: 'CacheFirst',
+                            options: {
+                                cacheName: 'twitter',
+                                expiration: {
+                                    maxAgeSeconds: 60 * 60,
+                                },
+                            },
+                        },
+                    ],
+                },
+            }),
         ],
         css: {
             postcss: {
