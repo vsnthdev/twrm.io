@@ -4,11 +4,13 @@
  */
 
 import gsap from 'gsap'
+import isMobile from 'is-mobile'
 
 const button = document.querySelector('#buymeacoffee')
+const autoAnimate = isMobile({ tablet: true }) == false
 
 const tl = gsap.timeline({
-    paused: true,
+    paused: autoAnimate,
     defaults: {
         repeat: -1,
         yoyo: true,
@@ -23,10 +25,12 @@ tl.to(button, {
     rotateZ: 5,
 })
 
-button.addEventListener('mouseover', () => {
-    tl.play()
-})
+if (autoAnimate) {
+    button.addEventListener('mouseover', () => {
+        tl.play()
+    })
 
-button.addEventListener('mouseout', () => {
-    tl.pause().progress(0)
-})
+    button.addEventListener('mouseout', () => {
+        tl.pause().progress(0)
+    })
+}
