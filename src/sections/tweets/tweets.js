@@ -7,22 +7,25 @@
 
 import axios from 'axios'
 import isMobile from 'is-mobile'
+import { read } from 'localstorage-helpr'
 import nprogress from 'nprogress'
 import qs from 'qs'
 import Url from 'url-parse'
+
+import { validateTheme } from '../../assets/scripts/theme'
 
 // the division where we'll create embeds from Twitter
 const container = document.querySelector('#tweets-content')
 
 // TODO: export this function which reloads the embeds
 // with a different theme
-window.setTheme = () => {
+export const applyThemeToTweets = theme => {
     container.querySelectorAll('iframe').forEach(frame => {
         const url = new Url(frame.src)
         const query = qs.parse(url.query)
 
         // switch to dark theme
-        query.theme = query.theme == 'light' ? 'dark' : 'light'
+        query.theme = theme
 
         url.query = qs.stringify(query)
         frame.src = url.toString()
@@ -95,7 +98,7 @@ export default async () => {
         // using Twitter's widget.js which is loaded
         // separately (see index.html) we create our embeds
         // of each of our tweets
-        twttr.widgets.createTweetEmbed(id, anchor).then(() => {
+        twttr.widgets.createTweetEmbed(id, anchor, { theme: validateTheme(read('theme')) }).then(() => {
             // since these tweets are being loaded in async
             // the order at they load isn't predictable, so
             // we maintain a counter above and increment it
