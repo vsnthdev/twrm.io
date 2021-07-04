@@ -4,6 +4,7 @@
 /* Section Styles */
 @import '../../sections/main/main.css';
 @import '../../sections/tweets/tweets.css';
+@import '../../sections/footer/footer.css';
 
 /* Component Styles */
 @import '../../components/header/header.css';

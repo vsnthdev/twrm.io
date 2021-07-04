@@ -26,7 +26,7 @@
         top: 0px;
         height: 100%;
         width: 100px;
-        z-index: 999;
+        z-index: 9;
         transition: opacity 100ms ease-in;
     }
 
