@@ -34,7 +34,14 @@ btn.addEventListener('click', () => {
 
     if (modal.classList.contains('open')) {
         MicroModal.close('settings')
+        gsap.from(btn, {
+            rotation: -90,
+        })
     } else {
+        gsap.from(btn, {
+            rotation: 90,
+        })
+
         // scroll to the top of the page
         window.scrollTo({
             top: 0,
