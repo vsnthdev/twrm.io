@@ -1,8 +1,26 @@
 <div id="settings" class="settings z-10" aria-hidden="true">
-    <div id="settings-card" class="absolute p-4 bg-default dark:bg-gray-800 rounded-md shadow-lg">
+    <div id="settings-card" class="absolute px-6 py-4 bg-default dark:bg-gray-800 rounded-md shadow-lg">
         <div tabindex="-1" data-micromodal-close>
             <div role="dialog" aria-modal="true" aria-labelledby="settings-title">
-                <div id="settings-content">Modal Content</div>
+                <div id="settings-content">
+                    <h3 class="font-display">Settings</h3>
+                    <div class="py-2">
+                        <div class="flex items-center justify-between">
+                            <div><span class="text-sm">Theme</span></div>
+                            <div class="select-wrapper">
+                                <vector src="components/settings/img/down.svg"></vector>
+                                <select
+                                    id="theme"
+                                    class="px-3 py-2 w-20 text-sm bg-gray-200 dark:bg-gray-700 rounded-md"
+                                >
+                                    <option value="dark">Dark</option>
+                                    <option value="light">Light</option>
+                                    <option value="auto">Auto</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

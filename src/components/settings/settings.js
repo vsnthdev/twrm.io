@@ -6,9 +6,13 @@
 import gsap from 'gsap'
 import MicroModal from 'micromodal'
 
+import theme from './scripts/theme'
+
 const modal = document.querySelector('#settings')
 const btn = document.querySelector('.settings-btn')
 const modalCard = modal.querySelector('#settings-card')
+
+theme(modalCard)
 
 const reverseAnimation = (tl, timeScale = 1) => {
     if (tl.reversed()) {
@@ -50,9 +54,11 @@ btn.addEventListener('click', () => {
         background
             .from(modal, {
                 opacity: 0,
+                pointerEvents: 'none',
             })
             .to(modal, {
                 opacity: 1,
+                pointerEvents: 'all',
             })
 
         const card = gsap.timeline({
@@ -86,4 +92,10 @@ btn.addEventListener('click', () => {
             },
         })
     }
+})
+
+modal.addEventListener('click', event => {
+    if (event.target != modal) return
+
+    MicroModal.close('settings')
 })

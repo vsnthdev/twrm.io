@@ -4,8 +4,27 @@
     position: absolute;
     backdrop-filter: blur(10px);
     display: none;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .settings #settings-card {
-    width: 200px;
+    width: 230px;
+}
+
+.settings * {
+    outline: none;
+}
+
+.settings .select-wrapper {
+    position: relative;
+}
+
+.settings .select-wrapper select {
+    appearance: none;
+}
+
+.settings .select-wrapper svg {
+    position: absolute;
+    top: 8px;
+    right: 7px;
 }
