@@ -1,3 +1,12 @@
+#buymeacoffee,
+#buymeacoffee::before {
+    transition: 250ms transform ease;
+}
+
+#buymeacoffee:hover {
+    transform: scale(1.2);
+}
+
 #buymeacoffee::before {
     content: '';
     background-color: #fd0;
@@ -14,6 +23,7 @@
 
 #buymeacoffee:hover::before {
     filter: blur(20px);
+    transform: scale(1.2);
 }
 
 footer .line {
