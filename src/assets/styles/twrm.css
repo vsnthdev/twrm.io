@@ -9,6 +9,7 @@
 /* Component Styles */
 @import '../../components/header/header.css';
 @import '../../components/box/box.css';
+@import '../../components/settings/settings.css';
 
 /* Tailwind CSS */
 @tailwind base;

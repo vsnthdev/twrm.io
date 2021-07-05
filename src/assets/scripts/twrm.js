@@ -5,6 +5,7 @@
 
 import './emoji.js'
 import '../../sections/footer/footer'
+import '../../components/settings/settings'
 
 import isMobile from 'is-mobile'
 import { read } from 'localstorage-helpr'

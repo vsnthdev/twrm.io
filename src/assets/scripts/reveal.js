@@ -87,7 +87,7 @@ export default async ready => {
         ease: 'power3',
     })
 
-    gsap.from('header .settings', {
+    gsap.from('header .settings-btn', {
         opacity: 0,
         y: -100,
         delay: 0.99,
