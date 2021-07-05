@@ -58,12 +58,12 @@ export default () => {
     const userPref = read('theme')
 
     if (!userPref) {
-        window.setTheme({
+        setTheme({
             theme: getSystemTheme(),
         })
 
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =>
-            window.setTheme({
+            setTheme({
                 theme: event.matches ? 'dark' : 'light',
             }),
         )
