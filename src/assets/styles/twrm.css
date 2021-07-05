@@ -18,7 +18,7 @@
 
 /* Other Utility Styles */
 
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none;
 }
 

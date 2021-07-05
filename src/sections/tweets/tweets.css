@@ -10,6 +10,36 @@
     background-color: black;
 }
 
+#tweets-content {
+    color: rgba(0, 0, 0, 0);
+    transition: color 0.3s ease;
+}
+
+#tweets-content:hover {
+    color: #cbd5e1;
+}
+
+.dark #tweets-content:hover {
+    color: #334155;
+}
+
+#tweets-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#tweets-content::-webkit-scrollbar,
+#tweets-content::-webkit-scrollbar-thumb {
+    height: 26px;
+    width: 26px;
+    border-radius: 13px;
+    background-clip: padding-box;
+    border: 10px solid transparent;
+}
+
+#tweets-content::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 10px;
+}
+
 #tweets-content a {
     width: 100%;
 }

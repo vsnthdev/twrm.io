@@ -27,4 +27,5 @@
     position: absolute;
     top: 8px;
     right: 7px;
+    pointer-events: none;
 }
