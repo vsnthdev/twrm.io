@@ -6,8 +6,11 @@
 
 import Clipboard from 'clipboard'
 
-import { magic } from '../modern/index'
+import { magic, showBoxIndicator } from '../modern/index'
 
+// creates a virtual trigger button
+// that is used to copy text to clipboard
+// using Clipboard.js
 const makeTrigger = () => {
     const btn = document.createElement('button')
     btn.style.display = 'none'
@@ -31,18 +34,9 @@ export default async () => {
         },
     })
 
-    // handle events
-    clip.on('success', () => {
-        document.querySelector('svg#error').style.opacity = 0
-        document.querySelector('svg#typing').style.opacity = 0
-        document.querySelector('svg#success').style.opacity = 1
-    })
-
-    clip.on('error', () => {
-        document.querySelector('svg#error').style.opacity = 1
-        document.querySelector('svg#typing').style.opacity = 0
-        document.querySelector('svg#success').style.opacity = 0
-    })
+    // show appropriate indicator when an event is fired
+    clip.on('success', () => showBoxIndicator('success'))
+    clip.on('error', () => showBoxIndicator('failed'))
 
     // attach the keyup event
     box.addEventListener('keyup', e => {

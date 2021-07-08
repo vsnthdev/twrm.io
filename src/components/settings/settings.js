@@ -6,6 +6,7 @@
 import gsap from 'gsap'
 import MicroModal from 'micromodal'
 
+import autoCopy from './scripts/autoCopy'
 import theme from './scripts/theme'
 
 const modal = document.querySelector('#settings')
@@ -13,6 +14,7 @@ const btn = document.querySelector('.settings-btn')
 const modalCard = modal.querySelector('#settings-card')
 
 theme(modalCard)
+autoCopy(modalCard)
 
 const reverseAnimation = (tl, timeScale = 1) => {
     if (tl.reversed()) {

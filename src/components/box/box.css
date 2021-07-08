@@ -27,7 +27,7 @@
 }
 
 #boxContainer #success,
-#boxContainer #error {
+#boxContainer #failed {
     transition: opacity 200ms ease;
 }
 

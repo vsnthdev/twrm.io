@@ -8,7 +8,7 @@
 }
 
 .settings #settings-card {
-    width: 230px;
+    width: 300px;
 }
 
 .settings * {
@@ -28,4 +28,27 @@
     top: 8px;
     right: 7px;
     pointer-events: none;
+}
+
+.settings .checkbox {
+    content: '';
+}
+
+.settings .checkbox-fill {
+    transition: 250ms background cubic-bezier(0.755, 0, 0.075, 1.005);
+}
+
+.settings .checkbox-fill .indicator {
+    left: 6px;
+    top: 6px;
+    transition: 150ms all cubic-bezier(0.755, 0, 0.075, 1.005);
+}
+
+.settings .checkbox input[type='checkbox']:checked ~ .checkbox-fill {
+    background-color: #0496ff;
+}
+
+.settings .checkbox input[type='checkbox']:checked ~ .checkbox-fill .indicator {
+    border-color: white;
+    transform: translateX(28px);
 }

@@ -6,11 +6,12 @@
 // depending on the browser and operating system
 // autoCopy may be disabled completely.
 
+import { read } from 'localstorage-helpr'
+
 import { copyToClipboard } from './index'
 
 let timer
 const timeout = 1000
-let previousText
 
 const press = e => {
     // since we already copy when pressing
@@ -22,6 +23,9 @@ const press = e => {
 }
 
 const up = e => {
+    // check if autoCopy is set to true
+    if (read('autoCopy') == false) return
+
     // since we already copy when pressing
     // enter, autoCopy need not fire once again
     if (e.keyCode == 13) return
@@ -30,16 +34,8 @@ const up = e => {
     timer = setTimeout(copyToClipboard, timeout)
 }
 
-export default async box => {
+export default async () => {
+    const box = document.querySelector('#box')
     box.addEventListener('keypress', press)
     box.addEventListener('keyup', up)
-
-    box.addEventListener('keyup', () => {
-        if (document.querySelector('#box').value != previousText) {
-            document.querySelector('svg#error').style.opacity = 0
-            document.querySelector('svg#typing').style.opacity = 1
-            document.querySelector('svg#success').style.opacity = 0
-            previousText = document.querySelector('#box').value
-        }
-    })
 }
