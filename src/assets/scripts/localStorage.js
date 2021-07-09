@@ -9,7 +9,7 @@ import { create, read } from 'localstorage-helpr'
 const set = (key, value) => (read(key) == null ? create(key, value) : false)
 
 const config = {
-    theme: false,
+    theme: 'auto',
     motionReduced: false,
     autoCopy: navigator.clipboard ? true : false,
     copyMethod: navigator.clipboard ? 'modern' : 'legacy',
