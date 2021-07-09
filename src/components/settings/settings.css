@@ -13,6 +13,7 @@
 
 .settings * {
     outline: none;
+    user-select: none;
 }
 
 .settings .select-wrapper {

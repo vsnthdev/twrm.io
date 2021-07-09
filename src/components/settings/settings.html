@@ -3,9 +3,9 @@
         <div tabindex="-1" data-micromodal-close>
             <div role="dialog" aria-modal="true" aria-labelledby="settings-title">
                 <div id="settings-content" class="pt-1">
-                    <h3 class="font-display">Settings</h3>
-                    <div class="py-2">
-                        <div class="flex items-center justify-between py-3">
+                    <h3 class="font-display text-lg font-semibold">Settings</h3>
+                    <div class="pb-2 pt-2">
+                        <div class="flex items-center justify-between py-2">
                             <div><span class="text-sm">Theme</span></div>
                             <div class="select-wrapper">
                                 <vector src="components/settings/img/down.svg"></vector>
@@ -19,11 +19,45 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-between pb-4 pt-2">
                             <div><span class="text-sm">Auto copy</span></div>
                             <div>
                                 <label class="checkbox" for="autoCopy">
                                     <input class="hidden" type="checkbox" id="autoCopy" />
+                                    <div
+                                        class="
+                                            checkbox-fill
+                                            relative
+                                            w-14
+                                            h-7
+                                            bg-gray-200
+                                            dark:bg-gray-700
+                                            rounded-full
+                                            cursor-pointer
+                                        "
+                                    >
+                                        <div
+                                            class="
+                                                indicator
+                                                absolute
+                                                z-10
+                                                w-4
+                                                h-4
+                                                border-4 border-solid border-gray-400
+                                                dark:border-gray-600
+                                                rounded-full
+                                                pointer-events-none
+                                            "
+                                        ></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div><span class="text-sm">Reduced motion</span></div>
+                            <div>
+                                <label class="checkbox" for="motionReduced">
+                                    <input class="hidden" type="checkbox" id="motionReduced" />
                                     <div
                                         class="
                                             checkbox-fill

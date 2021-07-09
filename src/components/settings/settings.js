@@ -4,9 +4,11 @@
  */
 
 import gsap from 'gsap'
+import { read } from 'localstorage-helpr'
 import MicroModal from 'micromodal'
 
 import autoCopy from './scripts/autoCopy'
+import motionReduced from './scripts/motionReduced'
 import theme from './scripts/theme'
 
 const modal = document.querySelector('#settings')
@@ -15,12 +17,17 @@ const modalCard = modal.querySelector('#settings-card')
 
 theme(modalCard)
 autoCopy(modalCard)
+motionReduced(modalCard)
 
 const reverseAnimation = (tl, timeScale = 1) => {
-    if (tl.reversed()) {
-        tl.timeScale(timeScale).play()
+    if (read('motionReduced')) {
+        tl.pause().seek(0)
     } else {
-        tl.timeScale(timeScale).reverse()
+        if (tl.reversed()) {
+            tl.timeScale(timeScale).play()
+        } else {
+            tl.timeScale(timeScale).reverse()
+        }
     }
 }
 
@@ -36,19 +43,21 @@ btn.addEventListener('click', () => {
 
     if (modal.classList.contains('open')) {
         MicroModal.close('settings')
-        gsap.from(btn, {
-            rotation: -90,
-        })
+        read('motionReduced') ||
+            gsap.from(btn, {
+                rotation: -90,
+            })
     } else {
-        gsap.from(btn, {
-            rotation: 90,
-        })
+        read('motionReduced') ||
+            gsap.from(btn, {
+                rotation: 90,
+            })
 
         // scroll to the top of the page
         window.scrollTo({
             top: 0,
             left: 0,
-            behavior: 'smooth',
+            behavior: read('motionReduced') ? 'auto' : 'smooth',
         })
 
         const background = gsap.timeline({
@@ -96,15 +105,21 @@ btn.addEventListener('click', () => {
             },
             onShow: modal => {
                 modal.style.display = 'flex'
-                card.play()
-                background.play()
+                if (read('motionReduced')) {
+                    card.pause().seek(100)
+                    background.pause().seek(100)
+                } else {
+                    card.play()
+                    background.play()
+                }
             },
         })
     }
 })
 
+// close the modal when clicked on the
+// background
 modal.addEventListener('click', event => {
     if (event.target != modal) return
-
     MicroModal.close('settings')
 })
