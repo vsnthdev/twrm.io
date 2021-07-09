@@ -41,8 +41,15 @@ const setupHorizontalScroll = () => {
     // the scrolling direction on desktop
     // while preventing the natural behaviour
     container.addEventListener('wheel', event => {
-        container.scrollLeft = container.scrollLeft + event.deltaY
         event.preventDefault()
+
+        if (event.shiftKey) {
+            window.scrollTo({
+                top: window.scrollY + event.deltaX,
+            })
+        } else {
+            container.scrollLeft = container.scrollLeft + event.deltaY
+        }
     })
 
     // add or remove the left and right gradient indicator
