@@ -31,6 +31,14 @@
     transition: opacity 200ms ease;
 }
 
+#boxContainer #typing,
+#boxContainer #success,
+#boxContainer #failed {
+    top: 50%;
+    right: 1.7rem;
+    transform: translateY(-50%);
+}
+
 .dark #boxContainer {
     background-color: rgba(0, 0, 0, 0.3);
 }
