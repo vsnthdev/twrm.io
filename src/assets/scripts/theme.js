@@ -29,9 +29,6 @@ export const validateTheme = theme => {
 }
 
 export const setTheme = ({ theme, apply = true }) => {
-    // validate the inputs
-    theme = validateTheme(theme)
-
     // set it on localStorage
     update('theme', theme)
 
