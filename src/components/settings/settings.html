@@ -5,88 +5,14 @@
                 <div id="settings-content" class="pt-1">
                     <h3 class="font-display text-lg font-semibold">Settings</h3>
                     <div class="pb-2 pt-2">
-                        <div class="flex items-center justify-between py-2">
-                            <div><span class="text-sm">Theme</span></div>
-                            <div class="select-wrapper">
-                                <vector src="components/settings/img/down.svg"></vector>
-                                <select
-                                    id="theme"
-                                    class="px-3 py-2 w-20 text-sm bg-gray-200 dark:bg-gray-700 rounded-md"
-                                >
-                                    <option value="dark">Dark</option>
-                                    <option value="light">Light</option>
-                                    <option value="auto">Auto</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between pb-4 pt-2">
-                            <div><span class="text-sm">Auto copy</span></div>
-                            <div>
-                                <label class="checkbox" for="autoCopy">
-                                    <input class="hidden" type="checkbox" id="autoCopy" />
-                                    <div
-                                        class="
-                                            checkbox-fill
-                                            relative
-                                            w-14
-                                            h-7
-                                            bg-gray-200
-                                            dark:bg-gray-700
-                                            rounded-full
-                                            cursor-pointer
-                                        "
-                                    >
-                                        <div
-                                            class="
-                                                indicator
-                                                absolute
-                                                z-10
-                                                w-4
-                                                h-4
-                                                border-4 border-solid border-gray-400
-                                                dark:border-gray-600
-                                                rounded-full
-                                                pointer-events-none
-                                            "
-                                        ></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div><span class="text-sm">Reduced motion</span></div>
-                            <div>
-                                <label class="checkbox" for="motionReduced">
-                                    <input class="hidden" type="checkbox" id="motionReduced" />
-                                    <div
-                                        class="
-                                            checkbox-fill
-                                            relative
-                                            w-14
-                                            h-7
-                                            bg-gray-200
-                                            dark:bg-gray-700
-                                            rounded-full
-                                            cursor-pointer
-                                        "
-                                    >
-                                        <div
-                                            class="
-                                                indicator
-                                                absolute
-                                                z-10
-                                                w-4
-                                                h-4
-                                                border-4 border-solid border-gray-400
-                                                dark:border-gray-600
-                                                rounded-full
-                                                pointer-events-none
-                                            "
-                                        ></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
+                        <!-- theme select box -->
+                        <module href="/components/settings/modules/theme/theme.html"></module>
+
+                        <!-- autoCopy toggle switch -->
+                        <module href="/components/settings/modules/autoCopy/autoCopy.html"></module>
+
+                        <!-- motionReduced toggle switch -->
+                        <module href="/components/settings/modules/motionReduced/motionReduced.html"></module>
                     </div>
                 </div>
             </div>

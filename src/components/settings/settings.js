@@ -7,9 +7,9 @@ import gsap from 'gsap'
 import { read } from 'localstorage-helpr'
 import MicroModal from 'micromodal'
 
-import autoCopy from './scripts/autoCopy'
-import motionReduced from './scripts/motionReduced'
-import theme from './scripts/theme'
+import autoCopy from './modules/autoCopy/autoCopy'
+import motionReduced from './modules/motionReduced/motionReduced'
+import theme from './modules/theme/theme'
 
 const modal = document.querySelector('#settings')
 const btn = document.querySelector('.settings-btn')

@@ -6,7 +6,7 @@
 
 import { read, update } from 'localstorage-helpr'
 
-import autoCopy from '../../../components/box/modern/autoCopy'
+import autoCopy from '../../../box/modern/autoCopy'
 
 export default settings => {
     const checkBox = settings.querySelector('input#autoCopy')

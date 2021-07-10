@@ -6,7 +6,7 @@
 
 import { read } from 'localstorage-helpr'
 
-import { setTheme } from '../../../assets/scripts/theme'
+import { setTheme } from '../../../../assets/scripts/theme'
 
 export default settings => {
     const selectBox = settings.querySelector('select#theme')
