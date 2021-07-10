@@ -118,3 +118,4 @@ dist
 .pnp.*
 
 .vercel
+.DS_Store
