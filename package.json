@@ -18,9 +18,6 @@
     "engines": {
         "node": "14"
     },
-    "os": [
-        "linux"
-    ],
     "scripts": {
         "clean": "rm -rf dist",
         "dev": "vite --config vite.config.js --port $PORT src/",
