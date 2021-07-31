@@ -18,6 +18,7 @@ const date = new Date()
 
 export default ({ mode }) =>
     defineConfig({
+        clearScreen: false,
         publicDir: '../public',
         plugins: [
             // run PostHTML to construct the dist
@@ -111,7 +112,8 @@ export default ({ mode }) =>
             outDir: '../dist',
         },
         server: {
-            open: true,
-            port: 2020,
+            fs: {
+                allow: ['.'],
+            },
         },
     })
