@@ -84,7 +84,7 @@ export default async () => {
     // be cached by a service worker for a shot period
     let { data: tweets } = await axios({
         method: 'GET',
-        url: 'https://api.vasanthdeveloper.com/tweets',
+        url: 'https://api.vsnth.dev/tweets',
     })
 
     // loop through each tweet in the response
