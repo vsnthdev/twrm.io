@@ -89,7 +89,7 @@ export default ({ mode }) =>
                             },
                         },
                         {
-                            urlPattern: /.+api.vasanthdeveloper.com.+/,
+                            urlPattern: /.+api.vsnth.dev.+/,
                             handler: 'CacheFirst',
                             options: {
                                 cacheName: 'api',
