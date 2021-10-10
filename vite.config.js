@@ -113,7 +113,7 @@ export default ({ mode }) =>
         },
         server: {
             fs: {
-                allow: ['.'],
+                strict: false,
             },
         },
     })

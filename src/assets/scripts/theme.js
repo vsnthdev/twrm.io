@@ -5,7 +5,7 @@
 
 import { read, update } from 'localstorage-helpr'
 
-import { applyThemeToTweets } from '../../sections/tweets/tweets'
+import themeTweets from '../../sections/tweets/theme.js'
 
 const html = document.querySelector('html')
 
@@ -44,10 +44,10 @@ const applyTheme = ({ theme = read('theme') }) => {
     // start applying
     if (theme == 'light') {
         html.classList.remove('dark')
-        applyThemeToTweets(theme)
+        themeTweets(theme)
     } else if (theme == 'dark') {
         html.classList.add('dark')
-        applyThemeToTweets(theme)
+        themeTweets(theme)
     }
 }
 
