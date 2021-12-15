@@ -40,20 +40,7 @@ module.exports = {
         },
         fontFamily: {
             body: [
-                'Poppins',
-                'ui-sans-serif',
-                'system-ui',
-                '-apple-system',
-                'BlinkMacSystemFont',
-                '"Segoe UI"',
-                'Roboto',
-                '"Helvetica Neue"',
-                'Arial',
-                '"Noto Sans"',
-                'sans-serif',
-            ],
-            display: [
-                'Sora',
+                'Basically A Sans Serif',
                 'ui-sans-serif',
                 'system-ui',
                 '-apple-system',
