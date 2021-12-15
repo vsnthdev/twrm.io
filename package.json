@@ -19,13 +19,10 @@
         "node": "14"
     },
     "scripts": {
-        "clean": "rm -rf dist",
-        "dev": "vite --config vite.config.js --port $PORT src/",
+        "clean": "rimraf dist",
+        "dev": "vite --config vite.config.js src/",
         "build": "vite --config vite.config.js build src/",
-        "preview": "npm run build && vercel dev --listen 2020",
-        "lint": "run-p 'lint:*'",
-        "lint:html": "prettier -w 'src/**/*.html'",
-        "lint:js": "eslint --fix -c .eslintrc.cjs '**/*.+(cjs|js)'"
+        "preview": "npm run build && sirv dist --port 5000"
     },
     "devDependencies": {
         "@babel/core": "^7.15.8",
@@ -50,6 +47,8 @@
         "prettier": "^2.4.1",
         "prettier-plugin-tailwind": "^2.2.12",
         "qs": "^6.10.1",
+        "rimraf": "^3.0.2",
+        "sirv-cli": "^1.0.14",
         "tailwind-caret-color": "^1.1.0",
         "tailwindcss": "^2.2.16",
         "twemoji": "^13.1.0",
