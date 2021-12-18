@@ -3,12 +3,16 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: ['**/*.html', '**/*.svg'],
+    content: [
+        './src/index.html',
+        './src/sections/**/*.{html,svg}',
+        './src/components/**/*.{html,svg}'
+    ],
     darkMode: 'class',
     theme: {
         extend: {
             colors: {
-                gray: colors.blueGray,
+                slate: colors.slate,
                 green: colors.emerald,
                 primary: '#0496ff',
                 dark: '#212738',

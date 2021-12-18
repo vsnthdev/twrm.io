@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="./assets/styles/twrm.css" />
     </head>
 
-    <body class="flex flex-col mb-0 text-dark dark:text-white font-body font-normal bg-default dark:bg-gray-900">
+    <body class="flex flex-col mb-0 text-dark dark:text-white font-body font-normal bg-default dark:bg-slate-900">
         <!-- theme component -->
         <module href="/components/theme/theme.html"></module>
 
@@ -36,7 +36,7 @@
         <module href="/components/settings/settings.html"></module>
 
         <!-- twrm script file -->
-        <script sync src="https://platform.twitter.com/widgets.js"></script>
-        <script type="module" src="./assets/scripts/twrm.js"></script>
+        <script type="module" defer src="https://platform.twitter.com/widgets.js"></script>
+        <script type="module" defer src="./assets/scripts/twrm.js"></script>
     </body>
 </html>
