@@ -40,7 +40,7 @@
 
 ## 📰 License
 
-> The **[twrm.io](https://twrm.io)** project is released under the [MIT license](LICENSE.md). <br> Developed &amp; maintained By Vasanth Srivatsa. Copyright 2021 © Vasanth Developer.
+> The **[twrm.io](https://twrm.io)** project is released under the [MIT license](LICENSE.md). <br> Developed &amp; maintained By Vasanth Srivatsa. Copyright 2022 © Vasanth Developer.
 
 <hr>
 
