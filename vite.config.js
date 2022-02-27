@@ -10,7 +10,7 @@ import modules from 'posthtml-modules'
 import tailwindcss from 'tailwindcss'
 import { defineConfig } from 'vite'
 import banner from 'vite-plugin-banner'
-import { minifyHtml } from 'vite-plugin-html'
+import { createHtmlPlugin } from 'vite-plugin-html'
 import { posthtmlPlugin } from 'vite-plugin-posthtml'
 import { VitePWA } from 'vite-plugin-pwa'
 
@@ -40,7 +40,9 @@ export default ({ mode }) =>
             }),
 
             // minify html during production
-            mode == 'production' ? minifyHtml() : null,
+            createHtmlPlugin({
+                minify: true,
+            }),
 
             // add a banner to JavaScript bundles
             banner(
