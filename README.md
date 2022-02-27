@@ -1,5 +1,10 @@
 <h5 align="center">
-    <a href="https://twrm.io" target="_blank" rel="noopener"><img src="./media/renders/logo.svg" alt="twrm.io" height="50"></a>
+    <a href="https://twrm.io#gh-light-mode-only" target="_blank" rel="noopener">
+        <img src="media/renders/logo_dark.svg#gh-light-mode-only" alt="twrm.io" height="50">
+    </a>
+    <a href="https://twrm.io#gh-dark-mode-only" target="_blank" rel="noopener">
+        <img src="media/renders/logo_light.svg" alt="twrm.io" height="50">
+    </a>
 </h5>
 <p align="center"><strong>Turn off 🔗 linked mentions, #️⃣ hashtags on Twitter 🐦 tweets.</strong></p>
 <p align="center">
