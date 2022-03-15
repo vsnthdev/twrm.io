@@ -29,7 +29,23 @@
 
 > Tweet me <a target="_blank" rel="noopener" href="https://vas.cx/twitter">@vsnthdev</a>, I would love to know your opinion/experience on this project 😍
 
-<!-- ## 📘 Usage -->
+## 📘 Usage 
+
+If you want to *@mention* someone, or use a *link*, or even use a *#hashtag* in your tweets without notifying anyone, then **twrm** is here to help you out!  
+
+*Here's how it works : 👇*
+1. Go to  [twrm.io](https://twrm.io/) and use the search box to @mention the twitter handle of the person (from whom you don't want to get notified!)
+2. After you mention a valid person in the search box, you can see a blue tick aside it. ☑
+3. Now, you can copy the mention from the search box and paste it in your tweet. 
+    *That's it!*  As you can notice, it's no longer a link now 😉
+
+- Follow the same steps if you want to use 🔗 links or  #️⃣ hastags as well! 
+
+**Check out the demo below --->** 
+
+![alt text](https://github.com/ShruAgarwal/twrm.io/blob/twrm/demo.gif)
+
+
 
 <!-- ## 🛠 Tooling -->
 
