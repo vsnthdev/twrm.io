@@ -7,7 +7,28 @@
  * @type {import('next').NextConfig}
  */
 const config = {
-    reactStrictMode: true
+    reactStrictMode: true,
+    webpack: config => {
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: [
+                {
+                    loader: '@svgr/webpack',
+                    options: {
+                        typescript: true,
+                        svgoConfig: {
+                            plugins: []
+                        }
+                    }
+                }
+            ],
+            issuer: {
+                and: [/\.(js|ts)x?$/]
+            }
+        })
+
+        return config
+    }
 }
 
 module.exports = config
