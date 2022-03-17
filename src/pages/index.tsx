@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
     return <>
         {/* the header common for the entire website */}
-        <Header/>
+        <Header settingsState={settingsState} />
 
         {/* Settings modal */}
         <Settings state={settingsState}></Settings>

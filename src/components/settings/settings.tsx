@@ -4,14 +4,14 @@
  */
 
 import { ReactElement } from 'react'
-import { SettingsState } from './functions';
+import { SettingsState, closeSettings } from './functions'
 
 export const Settings = ({state}: { state: SettingsState}): ReactElement => {
     const { isOpen } = state
 
     return <div className={`fixed z-10 inset-0 overflow-y-auto transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'} ${isOpen || 'pointer-events-none'}`}>
          <div className="flex justify-center items-center min-h-screen pt-4 px-4 pb-20">
-            <div className="fixed inset-0 bg-slate-700 bg-opacity-60 backdrop-blur-sm"></div>
+            <div className="fixed inset-0 bg-slate-700 bg-opacity-60 backdrop-blur-sm" onClick={() => closeSettings(state)}></div>
 
             {/* modal content */}
             <div className="w-full rounded-xl overflow-hidden shadow-xl transform max-w-md">
@@ -71,7 +71,7 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
 
                 {/* modal footer */}
                 <div className="bg-slate-200 p-8 flex flex-col">
-                    <button type="button" className="mt-3 w-full inline-flex justify-center rounded-md border border-slate-300  px-4 py-2 transition-colors bg-white text-base font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Done</button>
+                    <button type="button" className="mt-3 w-full inline-flex justify-center rounded-md border border-slate-300  px-4 py-2 transition-colors bg-white text-base font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onClick={() => closeSettings(state)}>Done</button>
                 </div>
             </div>
          </div>

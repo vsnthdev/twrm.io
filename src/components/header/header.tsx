@@ -10,8 +10,9 @@ import GitHubIcon from './icons/github.svg'
 import TwitterIcon from './icons/twitter.svg'
 import DiscordIcon from './icons/discord.svg'
 import SettingsIcon from './icons/settings.svg'
+import { SettingsState, openSettings } from '../settings/functions'
 
-export const Header = (): ReactElement => {
+export const Header = ({ settingsState }: { settingsState: SettingsState }): ReactElement => {
     return <header className="px-6 py-10">
         <div className="px-4 container justify-between flex">
             <div>
@@ -36,7 +37,7 @@ export const Header = (): ReactElement => {
                 </a>
 
                 {/* Settings Cog */}
-                <button className="ml-4 cursor-pointer">
+                <button className="ml-4 cursor-pointer" onClick={() => openSettings(settingsState)}>
                     <SettingsIcon/>
                 </button>
             </div>

@@ -13,7 +13,10 @@ export interface SettingsState {
 }
 
 export const initSettingsState = (): SettingsState => {
-    const [ isOpen, setIsOpen ] = useState(true)
+    const [ isOpen, setIsOpen ] = useState(false)
 
     return { isOpen, setIsOpen }
 }
+
+export const openSettings = (state: SettingsState) => state.setIsOpen(true)
+export const closeSettings = (state: SettingsState) => state.setIsOpen(false)
