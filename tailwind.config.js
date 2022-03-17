@@ -16,6 +16,21 @@ module.exports = {
             primary: '#1e90ff',
             white: '#FFFFFF'
         },
+        fontFamily: {
+            sans: [
+                'Basically A Sans Serif',
+                'ui-sans-serif',
+                'system-ui',
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                'Roboto',
+                '"Helvetica Neue"',
+                'Arial',
+                '"Noto Sans"',
+                'sans-serif',
+            ]
+        },
         container: {
             center: true
         },
