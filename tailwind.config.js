@@ -13,9 +13,16 @@ module.exports = {
     theme: {
         colors: {
             slate: colors.slate,
+            primary: '#1e90ff',
+            white: '#FFFFFF'
         },
         container: {
             center: true
+        },
+        extend: {
+            transitionProperty: {
+                stroke: 'stroke'
+            }
         }
     },
     plugins: [],
