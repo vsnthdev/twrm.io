@@ -24,16 +24,16 @@ export const fixTweetRenderingProblems = () => {
     })
 
     document.querySelectorAll('.static-tweet-p').forEach(card => {
-        const emojis = card.querySelectorAll('.static-tweet-emoji')
+        const emojis = Array.from(card.querySelectorAll('.static-tweet-emoji'))
     
         for (const emoji of emojis) {
             if (Boolean(emoji.nextElementSibling) == false) continue
-            if (emoji.nextElementSibling.tagName.toLowerCase() == 'br') {
+            if (emoji.nextElementSibling?.tagName.toLowerCase() == 'br') {
                 const furtherNext = emoji.nextElementSibling.nextElementSibling
     
                 if (Boolean(furtherNext) == false) return
-                if (furtherNext.tagName.toLowerCase() == 'a') {
-                    emoji.nextElementSibling.style.display = 'none'
+                if (furtherNext?.tagName.toLowerCase() == 'a') {
+                    (emoji.nextElementSibling as HTMLElement).style.display = 'none'
                 }
             }
         }
