@@ -6,6 +6,7 @@
  */
 
 import { Dispatch, SetStateAction, useState } from 'react'
+import { cleanLocalStorage } from '../../utils/index'
 
 export interface SettingsState {
     isOpen: boolean
@@ -46,11 +47,14 @@ export const initSettingsState = (): SettingsState => {
     return { isOpen, setIsOpen, theme, setTheme, autoCopy, setAutoCopy, reducedMotion, setReducedMotion }
 }
 
-export const populateState = (state: SettingsState): void => {
-    state.setTheme(localStorage.getItem('theme') as string)
-    state.setAutoCopy(localStorage.getItem('autoCopy') as string)
-    state.setReducedMotion(localStorage.getItem('reducedMotion') as string)
-}
-
 export const openSettings = (state: SettingsState) => state.setIsOpen(true)
 export const closeSettings = (state: SettingsState) => state.setIsOpen(false)
+
+export const populateState = (state: SettingsState): void => {
+    cleanLocalStorage()
+    const getStr = (key: string, def: string) => localStorage.getItem(key) || def
+    
+    state.setTheme(getStr('theme', 'Auto'))
+    state.setAutoCopy(getStr('autoCopy', 'true'))
+    state.setReducedMotion(getStr('reducedMotion', 'false'))
+}
