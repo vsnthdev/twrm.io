@@ -8,6 +8,9 @@
  */
 const config = {
     reactStrictMode: true,
+    images: {
+        domains: ['pbs.twimg.com']
+    },
     webpack: config => {
         config.module.rules.push({
             test: /\.svg$/,
