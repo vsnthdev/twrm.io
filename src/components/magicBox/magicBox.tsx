@@ -16,7 +16,7 @@ export const MagicBox = (): ReactElement => {
     // there's text or not in the magic box
     const getTypingIndicatorColor = () => text.length == 0 ? 'text-slate-300' : 'text-slate-500'
 
-    return <div id="magicBox" className="relative flex w-[70vw] rounded-xl shadow-box max-w-2xl md:w-[80vw] backdrop-blur-sm bg-white/20 md:text-lg">
+    return <div id="magicBox" className="relative flex w-[70vw] rounded-xl shadow-box max-w-2xl md:w-[80vw] backdrop-blur-sm bg-white/30 md:text-lg">
         {/* the input where the user enters */}
         <input autoFocus autoCorrect="off" autoComplete="off" autoCapitalize="false" type="text" className="font-medium m-2 w-full pl-6 pr-16 py-4 rounded-lg outline-none text-slate-600 selection:bg-primary/10 placeholder:text-slate-400 placeholder:overflow-visible" placeholder="@mention, #hashtag or URL" value={text} onChange={e => setText(e.target.value)} />
 
