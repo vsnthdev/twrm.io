@@ -44,6 +44,9 @@ module.exports = {
                 'main-md': '90vh',
                 'main-lg': '95vh',
             },
+            boxShadow: {
+                box: '0px 10px 15px -3px rgba(0, 0, 0, 0.03)'
+            }
         }
     },
     plugins: [],

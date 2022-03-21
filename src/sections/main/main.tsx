@@ -4,6 +4,7 @@
  */
 
 import { ReactElement } from 'react'
+import { MagicBox } from '../../components/magicBox/magicBox';
 import Curve from './curve.svg'
 import BlobLarge from './blobs/large.svg'
 import BlobMedium from './blobs/medium.svg'
@@ -15,6 +16,7 @@ import DotsSmall from './dots/small.svg'
 export const Main = (): ReactElement => {
     return <main className="relative overflow-hidden flex bg-primary h-main md:h-main-md lg:h-main-lg">
         {/* the content */}
+        <div className="z-10 flex items-center justify-center w-full md:-mt-20 lg:-mt-40"><MagicBox/></div>
 
         {/* background curve */}
         <div className="absolute -bottom-[3px] -left-3 z-10 text-slate-100" style={{ width: '110vw' }}><Curve/></div>
