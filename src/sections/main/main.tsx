@@ -8,6 +8,9 @@ import Curve from './curve.svg'
 import BlobLarge from './blobs/large.svg'
 import BlobMedium from './blobs/medium.svg'
 import BlobSmall from './blobs/small.svg'
+import DotsLarge from './dots/large.svg'
+import DotsMedium from './dots/medium.svg'
+import DotsSmall from './dots/small.svg'
 
 export const Main = (): ReactElement => {
     return <main className="relative overflow-hidden flex bg-primary h-main md:h-main-md lg:h-main-lg">
@@ -22,5 +25,8 @@ export const Main = (): ReactElement => {
         <div className="absolute w-40 -bottom-8 right-28 sm:w-52 md:right-44 lg:w-64 xl:w-80 lg:right-[28vw]"><BlobSmall/></div>
 
         {/* dots in background */}
+        <div className="absolute md:w-40 top-[50%] left-[50%] -mt-16 -ml-96"><DotsLarge/></div>
+        <div className="absolute md:w-32 -bottom-5 right-0 lg:bottom-5 xl:bottom-16"><DotsMedium/></div>
+        <div className="absolute md:w-24 top-[50%] left-[50%] -mt-32 ml-60"><DotsSmall/></div>
     </main>
 }
