@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         <Settings state={settingsState}></Settings>
 
         {/* the main section */}
-        <Main/>
+        <Main state={settingsState}/>
     </>
 }
 

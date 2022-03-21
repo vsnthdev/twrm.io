@@ -12,11 +12,12 @@ import BlobSmall from './blobs/small.svg'
 import DotsLarge from './dots/large.svg'
 import DotsMedium from './dots/medium.svg'
 import DotsSmall from './dots/small.svg'
+import { SettingsState } from '../../components/settings/functions';
 
-export const Main = (): ReactElement => {
+export const Main = ({state}: {state: SettingsState}): ReactElement => {
     return <main className="relative overflow-hidden flex bg-primary h-main md:h-main-md lg:h-main-lg">
         {/* the content */}
-        <div className="z-10 flex items-center justify-center w-full md:-mt-20 lg:-mt-40"><MagicBox/></div>
+        <div className="z-10 flex items-center justify-center w-full md:-mt-20 lg:-mt-40"><MagicBox state={state} /></div>
 
         {/* background curve */}
         <div className="absolute -bottom-[3px] -left-3 z-10 text-slate-100" style={{ width: '110vw' }}><Curve/></div>
