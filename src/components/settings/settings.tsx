@@ -9,7 +9,7 @@ import { SettingsState, closeSettings } from './functions'
 export const Settings = ({state}: { state: SettingsState}): ReactElement => {
     const { isOpen } = state
 
-    return <div className={`fixed z-10 inset-0 overflow-y-auto transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'} ${isOpen || 'pointer-events-none'}`}>
+    return <div className={`fixed z-40 inset-0 overflow-y-auto transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'} ${isOpen || 'pointer-events-none'}`}>
          <div className="flex justify-center items-center min-h-screen pt-4 px-4 pb-20">
             <div className="fixed inset-0 bg-slate-700 bg-opacity-60 backdrop-blur-sm" onClick={() => closeSettings(state)}></div>
 
@@ -51,7 +51,7 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
                             <div className="flex justify-center">
                                 <label className="relative flex justify-between items-center group">
                                     <input id="swAutoCopy" type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" />
-                                    <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-200 rounded-full duration-300 ease-in-out peer-checked:bg-primary after:w-5 after:h-5 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-5"></span>
+                                    <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5"></span>
                                 </label>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
                             <div className="flex justify-center">
                                 <label className="relative flex justify-between items-center group">
                                     <input id="swReducedMotion" type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" />
-                                    <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-200 rounded-full duration-300 ease-in-out peer-checked:bg-primary after:w-5 after:h-5 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-5"></span>
+                                    <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5"></span>
                                 </label>
                             </div>
                         </div>

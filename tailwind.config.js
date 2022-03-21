@@ -8,12 +8,13 @@ const colors = require('tailwindcss/colors')
 module.exports = {
     content: [
         "./src/pages/**/*.{js,ts,tsx,svg}",
+        "./src/sections/**/*.{js,ts,tsx,svg}",
         "./src/components/**/*.{js,ts,tsx,svg}",
     ],
     theme: {
         colors: {
             slate: colors.slate,
-            primary: '#1e90ff',
+            primary: '#0496ff',
             white: '#FFFFFF'
         },
         fontFamily: {
@@ -37,7 +38,12 @@ module.exports = {
         extend: {
             transitionProperty: {
                 stroke: 'stroke'
-            }
+            },
+            height: {
+                main: '50vh',
+                'main-md': '90vh',
+                'main-lg': '95vh',
+            },
         }
     },
     plugins: [],
