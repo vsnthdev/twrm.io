@@ -3,11 +3,14 @@
  *  Created On 17 March 2022
  */
 
-import { ReactElement } from 'react'
-import { SettingsState, closeSettings } from './functions'
+import { ReactElement, useEffect } from 'react'
+import { SettingsState, closeSettings, populateState } from './functions'
 
 export const Settings = ({state}: { state: SettingsState}): ReactElement => {
-    const { isOpen } = state
+    const { isOpen, theme, setTheme, autoCopy, setAutoCopy, reducedMotion, setReducedMotion } = state
+
+    // populate the state on the client side
+    useEffect(() => populateState(state), [])
 
     return <div className={`fixed z-40 inset-0 overflow-y-auto transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'} ${isOpen || 'pointer-events-none'}`}>
          <div className="flex justify-center items-center min-h-screen pt-4 px-4 pb-20">
@@ -34,7 +37,7 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
                         <div className="flex items-center space-x-2">
                             <label className="w-full" htmlFor="cmbTheme">Theme</label>
                             <div className="group relative flex justify-end w-full items-center">
-                                <select id="cmbTheme" className="bg-white appearance-none w-full px-3 py-[0.4rem] border-2 text-sm outline-none transition-colors border-slate-200 focus:border-primary rounded-md">
+                                <select className="bg-white appearance-none w-full px-3 py-[0.4rem] border-2 text-sm outline-none transition-colors border-slate-200 focus:border-primary rounded-md" value={theme} onChange={e => setTheme(e.target.value)}>
                                     <option>Auto</option>
                                     <option>Light</option>
                                     <option>Dark</option>
@@ -50,7 +53,7 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
                             <label className="w-full" htmlFor="swAutoCopy">Auto copy</label>
                             <div className="flex justify-center">
                                 <label className="relative flex justify-between items-center group">
-                                    <input id="swAutoCopy" type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" />
+                                    <input type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" checked={autoCopy == 'true' ? true : false} onChange={e => setAutoCopy(e.target.checked.toString())} />
                                     <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5"></span>
                                 </label>
                             </div>
@@ -61,7 +64,7 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
                             <label className="w-full" htmlFor="swReducedMotion">Reduced motion</label>
                             <div className="flex justify-center">
                                 <label className="relative flex justify-between items-center group">
-                                    <input id="swReducedMotion" type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" />
+                                    <input id="swReducedMotion" type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" checked={reducedMotion == 'true' ? true : false} onChange={e => setReducedMotion(e.target.checked.toString())} />
                                     <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5"></span>
                                 </label>
                             </div>
