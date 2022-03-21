@@ -21,7 +21,7 @@ export const Tweets = (): ReactElement => {
             <p className="text-slate-400 font-medium lg:text-xl">A curated feed of tips, tricks and resources, I tweet 🐦</p>
 
             <div className="gradient no-right relative">
-                <div className="relative flex flex-col space-y-6 items-center my-5 pb-5 md:flex-row md:items-start md:overflow-x-scroll md:overflow-y-hidden md:space-x-4">
+                <div className="relative flex flex-col space-y-6 items-center my-5 pb-5 md:space-y-0 md:flex-row md:items-start md:overflow-x-scroll md:overflow-y-hidden md:space-x-4">
                     { tweets.map((tweet: any) => {
                         const id = tweet.url.split('/').filter((elm: string) => Boolean(elm))[4]
 

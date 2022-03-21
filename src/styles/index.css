@@ -14,8 +14,6 @@
     --tweet-link-color: #0496ff;
     --tweet-link-color-hover: #1d4ed8;
     --tweet-font: 'Basically A Sans Serif', sans-serif;
-
-    min-width: 400px;
 }
 
 .static-tweet .static-tweet-twitter-link {
@@ -33,4 +31,10 @@
 .static-tweet .static-tweet-body,
 .static-tweet .static-tweet-summary img {
     border-radius: 0.7rem;
+}
+
+@screen md {
+    .static-tweet {
+        min-width: 400px;
+    }
 }
