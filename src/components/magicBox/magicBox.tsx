@@ -36,14 +36,14 @@ export const MagicBox = ({state}: {state: SettingsState}): ReactElement => {
 
         <div className="absolute pointer-events-none right-0 h-full px-8 flex items-center">
             {/* failed icon */}
-            <div className={`w-5 right-0 top-0 aspect-square text-[#ef4444] transition-opacity ${status == 1 ? 'opacity-100' : 'opacity-0'}`}><FailedIcon/></div>
+            <div className={`absolute w-5 right-8 top-[27px] aspect-square text-[#ef4444] transition-opacity ${status == 1 ? 'opacity-100' : 'opacity-0'}`}><FailedIcon/></div>
             
             {/* success icon */}
-            <div className={`w-5 right-0 top-0 aspect-square text-primary transition-opacity ${status == 0 ? 'opacity-100' : 'opacity-0'}`}><SuccessIcon/></div>
+            <div className={`absolute w-5 right-8 top-[27px] aspect-square text-primary transition-opacity ${status == 0 ? 'opacity-100' : 'opacity-0'}`}><SuccessIcon/></div>
 
             {/* typing indicator */}
-            <div className={`transition-opacity ${(status == -1 && state.autoCopy == 'true') ? 'opacity-100' : 'opacity-0'}`}>
-                <div className={`w-5 right-0 top-0 aspect-square transition-colors duration-500 ${getTypingIndicatorColor()}`}><TypingIcon/></div>
+            <div className={`absolute right-8 top-[27px] transition-opacity ${(status == -1 && state.autoCopy == 'true') ? 'opacity-100' : 'opacity-0'}`}>
+                <div className={`w-5 aspect-square transition-colors duration-500 ${getTypingIndicatorColor()}`}><TypingIcon/></div>
             </div>
         </div>
     </div>

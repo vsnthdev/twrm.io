@@ -15,10 +15,18 @@ const magic = (value: string) => value.replace(/([@#\.])/gi, '$1​')
 export const copyToClipboard = async (value: string, setStatus: Dispatch<SetStateAction<number>>) => {
     if (!value) return
 
+    const wrapSetStatus = (value: number) => {
+        setStatus(value)
+
+        setTimeout(() => {
+            setStatus(-1)
+        }, 1000)
+    }
+
     try {
         await navigator.clipboard.writeText(magic(value))
-        setStatus(0)
+        wrapSetStatus(0)
     } catch {
-        setStatus(1)
+        wrapSetStatus(1)
     }
 }
