@@ -7,3 +7,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Tweet cards */
+.static-tweet {
+    --tweet-font-color: #334155;
+    --tweet-link-color: #0496ff;
+    --tweet-link-color-hover: #1d4ed8;
+    --tweet-font: 'Basically A Sans Serif', sans-serif;
+
+    min-width: 400px;
+}
+
+.static-tweet .static-tweet-twitter-link {
+    color: var(--tweet-link-color);
+}
+
+.static-tweet .static-tweet-emoji {
+    display: inline;
+}
+
+.static-tweet .static-tweet-p {
+    font-weight: 500;
+}
+
+.static-tweet .static-tweet-body,
+.static-tweet .static-tweet-summary img {
+    border-radius: 0.7rem;
+}
