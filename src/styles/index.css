@@ -38,3 +38,21 @@
         min-width: 400px;
     }
 }
+
+/* Horizontal scrolling of tweets section */
+#tweets .container > div > div::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#tweets .container > div > div::-webkit-scrollbar,
+#tweets .container > div > div::-webkit-scrollbar-thumb {
+    height: 26px;
+    aspect-ratio: 1;
+    border-radius: 13px;
+    background-clip: padding-box;
+    border: 10px solid transparent;
+}
+
+#tweets .container > div > div::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 10px #cbd5e1;
+}

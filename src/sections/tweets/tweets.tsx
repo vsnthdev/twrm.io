@@ -24,7 +24,6 @@ export const Tweets = (): ReactElement => {
                 <div className="relative flex flex-col space-y-6 items-center my-5 pb-5 md:space-y-0 md:flex-row md:items-start md:overflow-x-scroll md:overflow-y-hidden md:space-x-4">
                     { tweets.map((tweet: any) => {
                         const id = tweet.url.split('/').filter((elm: string) => Boolean(elm))[4]
-
                         return <div className="w-full" key={id} onLoad={() => fixTweetRenderingProblems()} ><Tweet id={id} className="fixTweetRenderingProblems" /></div>
                     }) }
                 </div>
