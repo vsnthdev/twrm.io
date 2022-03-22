@@ -21,7 +21,7 @@ export const Tweets = (): ReactElement => {
             <p className="text-slate-400 font-medium lg:text-xl">A curated feed of 💡 tips, tricks 🪄 and resources, I 🐦 tweet</p>
 
             {/* the left and right gradients */}
-            <div className="relative before:bg-tweets-gradient-before before:absolute before:top-0 before:-left-1 before:z-20 before:h-full before:w-28 before:transition-opacity before:duration-100 after:bg-tweets-gradient-after after:absolute after:top-0 after:-right-1 after:z-20 after:h-full after:w-28 after:transition-opacity after:duration-100 before:opacity-0 after:opacity-0">
+            <div className="relative before:bg-tweets-gradient-before before:absolute before:top-0 before:-left-1 before:z-20 before:h-full before:w-28 before:transition-opacity before:duration-100 after:bg-tweets-gradient-after after:absolute after:top-0 after:-right-1 after:z-20 after:h-full after:w-28 after:transition-opacity after:duration-100 before:opacity-0 after:opacity-0 md:after:opacity-100">
                 <div className="relative flex flex-col space-y-6 items-center my-5 pb-5 md:space-y-0 md:flex-row md:items-start md:overflow-x-scroll md:overflow-y-hidden md:space-x-4" onScroll={e => scrollGradientIndicators(e.target as HTMLDivElement)}>
                     { tweets.map((tweet: any) => {
                         const id = tweet.url.split('/').filter((elm: string) => Boolean(elm))[4]
