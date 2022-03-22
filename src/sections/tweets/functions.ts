@@ -40,6 +40,27 @@ export const fixTweetRenderingProblems = () => {
     })
 }
 
+export const scrollGradientIndicators = (div: HTMLDivElement) => {
+    const container = div.parentElement as HTMLDivElement
+    const maxScroll = div.scrollWidth - div.clientWidth
+
+    if (div.scrollLeft != 0) {
+        container.classList.remove('md:before:opacity-0')
+        container.classList.add('md:before:opacity-100')
+    } else {
+        container.classList.remove('md:before:opacity-100')
+        container.classList.add('md:before:opacity-0')
+    }
+
+    if (div.scrollLeft == maxScroll) {
+        container.classList.add('md:after:opacity-0')
+        container.classList.remove('md:after:opacity-100')
+    } else {
+        container.classList.add('md:after:opacity-100')
+        container.classList.remove('md:after:opacity-0')
+    }
+}
+
 export default async () => {
     const { data } = await axios({
         method: 'GET',
