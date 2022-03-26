@@ -10,7 +10,8 @@ import { Settings } from '../components/settings/settings'
 import { Main } from '../sections/main/main'
 import { NextSeo } from 'next-seo'
 import { getAppName, getAppTitle, getAppFullDescription, getHomepage } from '../utils/index'
-import { Tweets } from '../sections/tweets/tweets';
+import { Tweets } from '../sections/tweets/tweets'
+import { Readme } from '../sections/readme/readme'
 
 const Home: NextPage = () => {
     // prepare settings modal state
@@ -53,6 +54,9 @@ const Home: NextPage = () => {
 
         {/* tweets section */}
         <Tweets/>
+
+        {/* readme section */}
+        <Readme/>
     </>
 }
 
