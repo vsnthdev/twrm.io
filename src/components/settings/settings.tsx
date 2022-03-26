@@ -14,12 +14,12 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
 
     return <div className={`fixed z-40 inset-0 overflow-y-auto transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'} ${isOpen || 'pointer-events-none'}`}>
          <div className="flex justify-center items-center min-h-screen pt-4 px-4 pb-20">
-            <div className="fixed inset-0 bg-slate-700 bg-opacity-60 backdrop-blur-sm" onClick={() => closeSettings(state)}></div>
+            <div className="fixed inset-0 bg-slate-700/60 backdrop-blur-sm dark:bg-slate-900/60" onClick={() => closeSettings(state)}></div>
 
             {/* modal content */}
             <div className="w-full rounded-xl overflow-hidden shadow-xl transform max-w-md">
                 {/* modal content */}
-                <div className="bg-slate-100 p-8 flex flex-col space-y-6">
+                <div className="bg-slate-100 p-8 flex flex-col space-y-6 dark:bg-slate-800">
                     {/* modal header */}
                     <div className="flex items-center space-x-2">
                         <div className="bg-primary/10 text-primary p-3 rounded-full">
@@ -37,7 +37,7 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
                         <div className="flex items-center space-x-2">
                             <label className="w-full" htmlFor="cmbTheme">Theme</label>
                             <div className="group relative flex justify-end w-full items-center">
-                                <select className="bg-white appearance-none w-full px-3 py-[0.4rem] border-2 text-sm outline-none transition-colors border-slate-200 focus:border-primary rounded-md" value={theme} onChange={e => setTheme(e.target.value)}>
+                                <select className="bg-white appearance-none w-full px-3 py-[0.4rem] border-2 text-sm outline-none transition-colors border-slate-200 focus:border-primary rounded-md dark:bg-slate-900 dark:border-slate-700 dark:focus:border-primary" value={theme} onChange={e => setTheme(e.target.value)}>
                                     <option>Auto</option>
                                     <option>Light</option>
                                     <option>Dark</option>
@@ -54,7 +54,7 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
                             <div className="flex justify-center">
                                 <label className="relative flex justify-between items-center group">
                                     <input type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" checked={autoCopy == 'true' ? true : false} onChange={e => setAutoCopy(e.target.checked.toString())} />
-                                    <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5"></span>
+                                    <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5 dark:bg-slate-900 dark:after:border-white/70 dark:peer-checked:after:border-white"></span>
                                 </label>
                             </div>
                         </div>
@@ -65,7 +65,7 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
                             <div className="flex justify-center">
                                 <label className="relative flex justify-between items-center group">
                                     <input id="swReducedMotion" type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" checked={reducedMotion == 'true' ? true : false} onChange={e => setReducedMotion(e.target.checked.toString())} />
-                                    <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5"></span>
+                                    <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5 dark:bg-slate-900 dark:after:border-white/70 dark:peer-checked:after:border-white"></span>
                                 </label>
                             </div>
                         </div>
@@ -73,8 +73,8 @@ export const Settings = ({state}: { state: SettingsState}): ReactElement => {
                 </div>
 
                 {/* modal footer */}
-                <div className="bg-slate-200 p-8 flex flex-col">
-                    <button type="button" className="mt-3 w-full inline-flex justify-center rounded-md border border-slate-300  px-4 py-2 transition-colors bg-white text-base font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onClick={() => closeSettings(state)}>Done</button>
+                <div className="bg-slate-200 p-8 flex flex-col dark:bg-slate-900">
+                    <button type="button" className="mt-3 w-full inline-flex justify-center rounded-md border border-slate-300  px-4 py-2 transition-colors bg-white text-base font-medium text-slate-700 hover:bg-slate-100 focus:ring-2 focus:ring-offset-2 focus:ring-slate-400 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:bg-slate-800 dark:ring-offset-slate-800 dark:text-white dark:border-slate-700 dark:hover:bg-slate-700/50 dark:focus:ring-slate-600" onClick={() => closeSettings(state)}>Done</button>
                 </div>
             </div>
          </div>

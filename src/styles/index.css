@@ -21,11 +21,17 @@ footer .dot {
     color: #0496ff;
 }
 
+.dark footer .typo {
+    color: white;
+}
+
 /* Tweet cards */
 .static-tweet {
     --tweet-font-color: #334155;
     --tweet-link-color: #0496ff;
     --tweet-link-color-hover: #1d4ed8;
+    --tweet-border: 2px solid #e2e8f0;
+    --tweet-border-hover: 2px solid #cbd5e1;
     --tweet-font: 'Basically A Sans Serif', sans-serif;
 }
 
@@ -73,4 +79,20 @@ footer .dot {
 /* hiding multiple images on a single tweet */
 .static-tweet .image-container details:not(:first-child) {
     display: none;
+}
+
+.dark .static-tweet {
+    --tweet-bg-color: #000508;
+    --tweet-font-color: #fff;
+    --tweet-border: 2px solid #003F7A;
+    --tweet-border-hover: 2px solid #0054A3;
+}
+
+.dark .static-tweet .static-tweet-header-name,
+.dark .static-tweet .static-tweet-header-username {
+    color: white;
+}
+
+.dark .static-tweet .static-tweet-header-username {
+    opacity: 0.6;
 }

@@ -10,7 +10,7 @@ import GitHubIcon from './icons/github.svg'
 import TwitterIcon from './icons/twitter.svg'
 import DiscordIcon from './icons/discord.svg'
 import SettingsIcon from './icons/settings.svg'
-import { SettingsState, openSettings } from '../settings/functions'
+import { SettingsState, toggleSettings } from '../settings/functions'
 
 export const Header = ({ settingsState }: { settingsState: SettingsState }): ReactElement => {
     return <>
@@ -41,7 +41,7 @@ export const Header = ({ settingsState }: { settingsState: SettingsState }): Rea
                     </a>
 
                     {/* Settings Cog */}
-                    <button className="ml-4 cursor-pointer" onClick={() => openSettings(settingsState)}>
+                    <button className="ml-4 cursor-pointer" onClick={() => toggleSettings(settingsState)}>
                         <SettingsIcon/>
                     </button>
                 </div>

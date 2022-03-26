@@ -20,7 +20,7 @@ export const Main = ({state}: {state: SettingsState}): ReactElement => {
         <div className="z-10 flex items-center justify-center w-full md:-mt-20 lg:-mt-40"><MagicBox state={state} /></div>
 
         {/* background curve */}
-        <div className="absolute -bottom-[3px] -left-3 z-10 text-slate-100" style={{ width: '110vw' }}><Curve/></div>
+        <div className="absolute -bottom-[3px] -left-3 z-10 text-slate-100 dark:text-secondary" style={{ width: '110vw' }}><Curve/></div>
         
         {/* blobs in background */}
         <div className="absolute -top-20 -left-20 w-64 sm:w-[19rem] md:w-[35rem] md:-top-48 md:-left-48 lg:w-[44rem] lg:-top-52 lg:-left-52"><BlobLarge/></div>

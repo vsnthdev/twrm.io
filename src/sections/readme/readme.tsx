@@ -8,6 +8,6 @@ import Curve from './curve.svg'
 
 export const Readme = (): ReactElement => {
     return <>
-        <div className="text-white"><Curve/></div>
+        <div className="text-white dark:text-secondary-light"><Curve/></div>
     </>
 }

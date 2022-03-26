@@ -6,6 +6,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+    darkMode: 'class',
     content: [
         "./src/styles/safeList.txt",
         "./src/pages/**/*.{js,ts,tsx,svg}",
@@ -16,6 +17,10 @@ module.exports = {
         colors: {
             slate: colors.slate,
             primary: '#0496ff',
+            secondary: '#001e3d',
+            'secondary-light': '#002952',
+            'secondary-lighter': '#003366',
+            'secondary-lightest': '#003D7A',
             white: '#FFFFFF'
         },
         fontFamily: {
@@ -37,10 +42,6 @@ module.exports = {
             center: true
         },
         extend: {
-            backgroundImage: {
-                'tweets-gradient-before': 'linear-gradient(90deg, rgb(241, 245, 249) 30%, rgba(240, 242, 248, 0) 100%)',
-                'tweets-gradient-after': 'linear-gradient(90deg, rgba(240, 242, 248, 0) 30%, rgb(241, 245, 249) 100%)'
-            },
             transitionProperty: {
                 stroke: 'stroke'
             },

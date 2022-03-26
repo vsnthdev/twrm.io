@@ -49,6 +49,7 @@ export const initSettingsState = (): SettingsState => {
 
 export const openSettings = (state: SettingsState) => state.setIsOpen(true)
 export const closeSettings = (state: SettingsState) => state.setIsOpen(false)
+export const toggleSettings = (state: SettingsState) => state.setIsOpen(!state.isOpen)
 
 export const populateState = (state: SettingsState): void => {
     cleanLocalStorage()
