@@ -165,5 +165,5 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node
 
 .vercel
-
-.vercel
+public/sw*
+public/workbox*

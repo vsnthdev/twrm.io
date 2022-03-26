@@ -8,6 +8,8 @@ import { Html, Head, Main, NextScript } from 'next/document'
 export default () => <Html>
     <Head>
         <meta name="theme-color" content="#1DA1F2" />
+        <link rel='manifest' href='/manifest.json' />
+        <link rel="icon" type="image/svg" href="/siteIcon.svg" />
     </Head>
     <body className="flex flex-col font-sans bg-slate-100 text-slate-800 selection:bg-primary/10">
         {/* specific page content */}
