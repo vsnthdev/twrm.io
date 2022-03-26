@@ -7,7 +7,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default () => <Html>
     <Head>
-        <meta name="theme-color" content="#1DA1F2" />
+        <meta name="theme-color" content="#0d99fb" />
         <link rel='manifest' href='/manifest.json' />
         <link rel="icon" type="image/svg" href="/siteIcon.svg" />
     </Head>

@@ -1,14 +1,14 @@
 {
     "id": "dev.vsnth.twrm",
     "name": "twrm.io",
-    "short_name": "twrm",
+    "short_name": "twrm.io",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#ffffff",
+    "background_color": "#212738",
     "lang": "en",
     "scope": "/",
     "orientation": "portrait-primary",
-    "theme_color": "#0496ff",
+    "theme_color": "#0d99fb",
     "description": "Turn off 🔗 linked mentions, #️⃣ hashtags on Twitter 🐦 tweets.",
     "icons": [
         {
