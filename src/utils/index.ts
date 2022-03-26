@@ -9,6 +9,7 @@ export const getAppName = () => app.name
 export const getAppTitle = (): string => `${app.name} — ${app.description}`
 export const getAppFullDescription = () => "twrm.io lets you disable linked mentions, hashtags, and links on your Twitter tweets, using zero-width Unicode characters. Made with 💖 by Vasanth Srivatsa."
 export const getHomepage = () => app.homepage
+export const getLicense = () => app.license
 
 export const cleanLocalStorage = (): void => {
     const blackList = ['motionReduced']

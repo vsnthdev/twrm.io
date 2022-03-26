@@ -8,6 +8,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Logo styles */
+header .dot {
+        opacity: 0.5;
+}
+
+footer .typo {
+    color: #212738;
+}
+
+footer .dot {
+    color: #0496ff;
+}
+
 /* Tweet cards */
 .static-tweet {
     --tweet-font-color: #334155;

@@ -12,6 +12,7 @@ import { NextSeo } from 'next-seo'
 import { getAppName, getAppTitle, getAppFullDescription, getHomepage } from '../utils/index'
 import { Tweets } from '../sections/tweets/tweets'
 import { Readme } from '../sections/readme/readme'
+import { Footer } from '../sections/footer/footer'
 
 const Home: NextPage = () => {
     // prepare settings modal state
@@ -57,6 +58,9 @@ const Home: NextPage = () => {
 
         {/* readme section */}
         <Readme/>
+
+        {/* footer section */}
+        <Footer/>
     </>
 }
 
