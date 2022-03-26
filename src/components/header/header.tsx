@@ -13,7 +13,7 @@ import SettingsIcon from './icons/settings.svg'
 import { SettingsState, openSettings } from '../settings/functions'
 
 export const Header = ({ settingsState }: { settingsState: SettingsState }): ReactElement => {
-    return <header className="absolute z-50 w-full px-6 py-10">
+    return <header className="absolute z-50 w-full px-6 py-10 bg-gradient-to-b from-primary to-[transparent]">
         <div className="px-4 container justify-between flex text-white">
             <div>
                 <a href="/">

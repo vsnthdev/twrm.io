@@ -36,11 +36,11 @@ module.exports = {
         container: {
             center: true
         },
-        backgroundImage: {
-            'tweets-gradient-before': 'linear-gradient(90deg, rgb(241, 245, 249) 30%, rgba(240, 242, 248, 0) 100%)',
-            'tweets-gradient-after': 'linear-gradient(90deg, rgba(240, 242, 248, 0) 30%, rgb(241, 245, 249) 100%)'
-        },
         extend: {
+            backgroundImage: {
+                'tweets-gradient-before': 'linear-gradient(90deg, rgb(241, 245, 249) 30%, rgba(240, 242, 248, 0) 100%)',
+                'tweets-gradient-after': 'linear-gradient(90deg, rgba(240, 242, 248, 0) 30%, rgb(241, 245, 249) 100%)'
+            },
             transitionProperty: {
                 stroke: 'stroke'
             },
