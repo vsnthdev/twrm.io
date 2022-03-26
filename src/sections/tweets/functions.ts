@@ -61,6 +61,16 @@ export const scrollGradientIndicators = (div: HTMLDivElement) => {
     }
 }
 
+export const horizontalScrolling = ({ current }: { current: HTMLDivElement }) => {
+    current.addEventListener('wheel', e => {
+        e.preventDefault()
+       current.scrollLeft = current.scrollLeft + e.deltaY
+    },
+    {
+        passive: false
+    })
+}
+
 export default async () => {
     const { data } = await axios({
         method: 'GET',

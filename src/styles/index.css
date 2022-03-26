@@ -56,3 +56,8 @@
 #tweets .container > div > div::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 0 10px #cbd5e1;
 }
+
+/* hiding multiple images on a single tweet */
+.static-tweet .image-container details:not(:first-child) {
+    display: none;
+}
