@@ -1,0 +1,26 @@
+{
+    "id": "dev.vsnth.twrm",
+    "name": "twrm.io",
+    "short_name": "twrm.io",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#001e3d",
+    "lang": "en",
+    "scope": "/",
+    "orientation": "portrait-primary",
+    "theme_color": "#001e3d",
+    "description": "Turn off 🔗 linked mentions, #️⃣ hashtags on Twitter 🐦 tweets.",
+    "icons": [
+        {
+            "src": "/appIcon.svg",
+            "sizes": "512x512",
+            "type": "image/svg",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/appIcon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

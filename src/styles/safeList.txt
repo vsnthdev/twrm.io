@@ -1,0 +1,2 @@
+md:before:opacity-0
+md:after:opacity-0

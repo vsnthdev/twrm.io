@@ -1,0 +1,108 @@
+/*
+ *  Entry stylesheet file for twrm.io project.
+ *  Created On 15 March 2022
+ */
+
+/* TailwindCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* hide page scrollbar */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Logo styles */
+header .dot {
+        opacity: 0.5;
+}
+
+footer .typo {
+    color: #212738;
+}
+
+footer .dot {
+    color: #0496ff;
+}
+
+.dark footer .typo {
+    color: white;
+}
+
+/* Tweet cards */
+.static-tweet {
+    --tweet-font-color: #334155;
+    --tweet-link-color: #0496ff;
+    --tweet-link-color-hover: #1d4ed8;
+    --tweet-border: 2px solid #e2e8f0;
+    --tweet-border-hover: 2px solid #cbd5e1;
+    --tweet-font: 'Basically A Sans Serif', sans-serif;
+}
+
+.static-tweet .static-tweet-twitter-link {
+    color: var(--tweet-link-color);
+}
+
+.static-tweet .static-tweet-emoji {
+    display: inline;
+}
+
+.static-tweet .static-tweet-p {
+    font-weight: 500;
+}
+
+.static-tweet .static-tweet-body,
+.static-tweet .static-tweet-summary img {
+    border-radius: 0.7rem;
+}
+
+@screen md {
+    .static-tweet {
+        min-width: 400px;
+    }
+}
+
+/* Horizontal scrolling of tweets section */
+#tweets .container > div > div::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#tweets .container > div > div::-webkit-scrollbar,
+#tweets .container > div > div::-webkit-scrollbar-thumb {
+    height: 26px;
+    aspect-ratio: 1;
+    border-radius: 13px;
+    background-clip: padding-box;
+    border: 10px solid transparent;
+}
+
+#tweets .container > div > div::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 10px #cbd5e1;
+}
+
+.dark #tweets .container > div > div::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 10px #2e5070;
+}
+
+/* hiding multiple images on a single tweet */
+.static-tweet .image-container details:not(:first-child) {
+    display: none;
+}
+
+.dark .static-tweet {
+    --tweet-bg-color: #000508;
+    --tweet-font-color: #fff;
+    --tweet-border: 2px solid #003F7A;
+    --tweet-border-hover: 2px solid #0054A3;
+}
+
+.dark .static-tweet .static-tweet-header-name,
+.dark .static-tweet .static-tweet-header-username {
+    color: white;
+}
+
+.dark .static-tweet .static-tweet-header-username {
+    opacity: 0.6;
+}
