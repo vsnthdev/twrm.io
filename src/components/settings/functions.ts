@@ -6,7 +6,7 @@
  */
 
 import { Dispatch, SetStateAction, useState } from 'react'
-import { cleanLocalStorage } from '../../utils/index'
+import { applyTheme, cleanLocalStorage } from '../../utils/index'
 
 export interface SettingsState {
     isOpen: boolean
@@ -22,10 +22,14 @@ export interface SettingsState {
     setReducedMotion: (value: string) => void
 }
 
-export const saveOnLocalStorage = (key: string, setter: Dispatch<SetStateAction<string>>) => {
+export const saveOnLocalStorage = (key: string, setter: Dispatch<SetStateAction<string>>, functions?: Array<(value: string) => any>) => {
     return (value: string) => {
         // fire the setter function
         setter(value)
+
+        // call the functions one by one
+        if (functions)
+            for (const func of functions) func(value)
 
         // set in localStorage
         localStorage.setItem(key, value)
@@ -36,7 +40,7 @@ export const initSettingsState = (): SettingsState => {
     const [ isOpen, setIsOpen ] = useState(false)
 
     const [ theme, updateTheme ] = useState('dark')
-    const setTheme = saveOnLocalStorage('theme', updateTheme)
+    const setTheme = saveOnLocalStorage('theme', updateTheme, [ applyTheme ])
 
     const [ autoCopy, updateAutoCopy ] = useState('false')
     const setAutoCopy = saveOnLocalStorage('autoCopy', updateAutoCopy)

@@ -11,6 +11,19 @@ export const getAppFullDescription = () => "twrm.io lets you disable linked ment
 export const getHomepage = () => app.homepage
 export const getLicense = () => app.license
 
+export const applyTheme = (value: string): void => {
+    if (value == 'Auto')
+        value = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light'
+    
+    if (value == 'Light') {
+        document.querySelector('html')?.classList.remove('dark')
+    } else if (value == 'Dark') {
+        document.querySelector('html')?.classList.add('dark')
+    } else {
+        throw new Error(`Unsupported theme value provided: ${value}`)
+    }
+}
+
 export const cleanLocalStorage = (): void => {
     const blackList = ['motionReduced']
 
