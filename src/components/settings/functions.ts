@@ -6,7 +6,7 @@
  */
 
 import { Dispatch, SetStateAction, useState } from 'react'
-import { applyTheme, cleanLocalStorage } from '../../utils/index'
+import { applyTheme, cleanLocalStorage, listenForThemeChange } from '../../utils/index'
 
 export interface SettingsState {
     isOpen: boolean
@@ -57,6 +57,8 @@ export const toggleSettings = (state: SettingsState) => state.setIsOpen(!state.i
 
 export const populateState = (state: SettingsState): void => {
     cleanLocalStorage()
+    listenForThemeChange()
+
     const getStr = (key: string, def: string) => localStorage.getItem(key) || def
     
     state.setTheme(getStr('theme', 'Auto'))

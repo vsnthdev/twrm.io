@@ -24,6 +24,17 @@ export const applyTheme = (value: string): void => {
     }
 }
 
+export const listenForThemeChange = (): void => {
+    window.matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', event => {
+            if (localStorage.getItem('theme') == 'Auto') {
+                applyTheme(
+                    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light'
+                )
+            }
+        })
+}
+
 export const cleanLocalStorage = (): void => {
     const blackList = ['motionReduced']
 
