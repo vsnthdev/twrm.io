@@ -3,14 +3,23 @@
  *  Created On 17 March 2022
  */
 
-import { ReactElement, useEffect } from 'react'
+import { MutableRefObject, ReactElement, useEffect, useRef } from 'react'
 import { SettingsState, closeSettings, populateState } from './functions'
+import animate from './animate'
 
-export const Settings = ({state}: { state: SettingsState}): ReactElement => {
+interface SettingsParams {
+    state: SettingsState
+    cog: MutableRefObject<null>
+}
+
+export const Settings = ({state, cog}: SettingsParams): ReactElement => {
     const { isOpen, theme, setTheme, autoCopy, setAutoCopy, reducedMotion, setReducedMotion } = state
 
     // populate the state on the client side
     useEffect(() => populateState(state), [])
+
+    // animations for opening & closing
+    useEffect(() => animate({ cog, isOpen }), [ isOpen ])
 
     return <div className={`fixed z-40 inset-0 overflow-y-auto transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'} ${isOpen || 'pointer-events-none'}`}>
          <div className="flex justify-center items-center min-h-screen pt-4 px-4 pb-20">

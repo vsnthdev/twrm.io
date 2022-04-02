@@ -13,10 +13,12 @@ import { getAppName, getAppTitle, getAppFullDescription, getHomepage } from '../
 import { Tweets } from '../sections/tweets/tweets'
 import { Readme } from '../sections/readme/readme'
 import { Footer } from '../sections/footer/footer'
+import { useRef } from 'react';
 
 const Home: NextPage = () => {
     // prepare settings modal state
     const settingsState = initSettingsState()
+    const cog = useRef(null)
 
     return <>
         {/* SEO */}
@@ -45,10 +47,10 @@ const Home: NextPage = () => {
             }} />
 
         {/* the header common for the entire website */}
-        <Header settingsState={settingsState} />
+        <Header state={settingsState} cog={cog} />
 
         {/* Settings modal */}
-        <Settings state={settingsState}></Settings>
+        <Settings state={settingsState} cog={cog}></Settings>
 
         {/* the main section */}
         <Main state={settingsState}/>

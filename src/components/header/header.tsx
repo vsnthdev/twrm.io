@@ -4,7 +4,7 @@
  *  Created On 17 March 2022
  */
 
-import { ReactElement, useEffect, useRef } from 'react'
+import { MutableRefObject, ReactElement, useEffect, useRef } from 'react'
 import Logo from './logo.svg'
 import GitHubIcon from './icons/github.svg'
 import TwitterIcon from './icons/twitter.svg'
@@ -13,15 +13,19 @@ import SettingsIcon from './icons/settings.svg'
 import animate from './animate'
 import { SettingsState, toggleSettings } from '../settings/functions'
 
-export const Header = ({ settingsState }: { settingsState: SettingsState }): ReactElement => {
+interface HeaderParams {
+    state: SettingsState
+    cog: MutableRefObject<null>
+}
+
+export const Header = ({ state, cog }: HeaderParams): ReactElement => {
     const gradient = useRef(null)
     const logo = useRef(null)
     const github = useRef(null)
     const twitter = useRef(null)
     const discord = useRef(null)
-    const settings = useRef(null)
 
-    useEffect(() => animate({ gradient, logo, github, twitter, discord, settings }), [])
+    useEffect(() => animate({ gradient, logo, github, twitter, discord, cog }), [])
 
     return <>
         {/* header gradient for PWAs to merge title bar appearance */}
@@ -51,7 +55,7 @@ export const Header = ({ settingsState }: { settingsState: SettingsState }): Rea
                     </a>
 
                     {/* Settings Cog */}
-                    <button ref={settings} className="ml-4 cursor-pointer" onClick={() => toggleSettings(settingsState)}>
+                    <button ref={cog} className="ml-4 cursor-pointer" onClick={() => toggleSettings(state)}>
                         <SettingsIcon/>
                     </button>
                 </div>

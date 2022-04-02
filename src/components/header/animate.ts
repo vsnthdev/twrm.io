@@ -12,11 +12,11 @@ interface AnimationRefs {
     github:  MutableRefObject<null>
     twitter:  MutableRefObject<null>
     discord:  MutableRefObject<null>
-    settings:  MutableRefObject<null>
+    cog:  MutableRefObject<null>
 }
 
 export default (refs: AnimationRefs) => {
-    const { gradient, logo, github, twitter, discord, settings } = refs
+    const { gradient, logo, github, twitter, discord, cog } = refs
 
     const tl = gsap.timeline({
         defaults: {
@@ -40,7 +40,7 @@ export default (refs: AnimationRefs) => {
         .from(discord.current, {
             y: -100
         }, 0.7)
-        .from(settings.current, {
+        .from(cog.current, {
             y: -100
         }, 0.75)
 }
