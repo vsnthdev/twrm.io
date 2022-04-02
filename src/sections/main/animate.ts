@@ -29,9 +29,7 @@ export default (refs: AnimationRefs) => {
 
     // animating the blobs
     tl
-        .from(main.current, {
-            y: -100,
-        })
+        .from(main.current, {})
         .from(blobLarge.current, {
             y: -100,
             stagger: 0
