@@ -41,13 +41,19 @@
 
 <!-- section:end:how-it-works -->
 
-## ⚗️ Building
+## 💻 Building & Dev Setup
 
--   `npm clean` — Cleans the generated build output files.
--   `npm run dev` — Uses Vercel & Vite to serve the web app and reloads on changes.
--   `npm run build` — Freshly builds the web app & optimizes for production.
--   `npm run preview` — Previews the built web app in a completely separate web server for testing.
--   `npm run lint` — Lints and formats the code.
+You need to be **exactly on Node.js v14** and follow the below instructions to start the project 👇
+
+- **STEP 1️⃣**  Clone this project
+- **STEP 2️⃣**  Run **`npm install`** to get all dependencies
+- **STEP 3️⃣**  To start the Next.js project run **`npm run start`**
+
+> **ℹ️ Note:** Running **`npm run build`** produces a production-optimized build. But this step isn't required since Vercel takes care of that.
+
+### 🚀 Deploying to production
+
+Pushing a commit to the `main` branch will trigger a CI/CD pipeline in Vercel which will build the project & put into production at https://twrm.io.
 
 <!-- footer -->
 
