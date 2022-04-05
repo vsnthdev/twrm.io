@@ -41,6 +41,14 @@
 
 <!-- section:end:how-it-works -->
 
+## 🔮 Tech stack
+
+| Name | Description |
+| --- | --- |
+| <img height="15" src="https://cdn.worldvectorlogo.com/logos/next-js.svg"> **Next.js** | Frontend framework of choice. |
+| <img height="15" src="https://www.svgrepo.com/show/354431/tailwindcss-icon.svg"> **TailwindCSS** | CSS framework for rapid UI building. |
+| <img height="15" src="https://www.svgrepo.com/show/354478/typescript-icon.svg"> **TypeScript** | Because it is so good 🤷‍♂️ |
+
 ## 💻 Building & Dev Setup
 
 You need to be **exactly on Node.js v14** and follow the below instructions to start the project 👇
