@@ -63,6 +63,10 @@ You need to be **exactly on Node.js v14** and follow the below instructions to s
 
 Pushing a commit to the `main` branch will trigger a CI/CD pipeline in Vercel which will build the project & put into production at https://twrm.io.
 
+### 🛠️ Writing Code
+
+This project follows [Vasanth's Commit Style](https://vas.cx/commits) for commit messages.
+
 <!-- footer -->
 
 ## 📰 License
