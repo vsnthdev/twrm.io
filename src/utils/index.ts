@@ -21,7 +21,7 @@ export const applyTheme = (value: string): void => {
         document.querySelector('html')?.classList.add('dark')
     } else {
         localStorage.removeItem('theme')
-        throw new Error(`Unsupported theme value provided: ${value}`)
+        location.reload()
     }
 }
 
