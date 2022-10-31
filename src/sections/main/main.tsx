@@ -3,17 +3,16 @@
  *  Created On 17 March 2022
  */
 
-import { ReactElement, useEffect, useRef } from 'react'
+import { Curve } from './curve'
+import { DotsLarge } from './dots/large'
+import { DotsSmall } from './dots/small'
+import { BlobLarge } from './blobs/large'
+import { BlobSmall } from './blobs/small'
+import { DotsMedium } from './dots/medium'
+import { BlobMedium } from './blobs/medium'
+import { ReactElement, useRef } from 'react'
 import { MagicBox } from '../../components/magicBox/magicBox';
-import Curve from './curve.svg'
-import BlobLarge from './blobs/large.svg'
-import BlobMedium from './blobs/medium.svg'
-import BlobSmall from './blobs/small.svg'
-import DotsLarge from './dots/large.svg'
-import DotsMedium from './dots/medium.svg'
-import DotsSmall from './dots/small.svg'
 import { SettingsState } from '../../components/settings/functions';
-import animate from './animate'
 
 export const Main = ({state}: {state: SettingsState}): ReactElement => {
     const main = useRef(null)
@@ -24,9 +23,6 @@ export const Main = ({state}: {state: SettingsState}): ReactElement => {
     const dotsLarge = useRef(null)
     const dotsMedium = useRef(null)
     const dotsSmall = useRef(null)
-
-    // trigger animations on the page load
-    useEffect(() => animate({ main, box, blobLarge, blobMedium, blobSmall, dotsLarge, dotsMedium, dotsSmall }), [])
 
     return <main ref={main} className="relative overflow-hidden flex bg-primary h-main md:h-main-md lg:h-main-lg">
         {/* the content */}

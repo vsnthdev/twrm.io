@@ -4,11 +4,11 @@
  */
 
 import { ReactElement } from 'react'
-import Logo from '../../components/header/logo.svg'
+import { Logo } from '../../components/header/logo'
 import { getLicense } from '../../utils/index';
 
 export const Footer = (): ReactElement => {
-    return <footer className="bg-white -mt-10 flex flex-col items-center py-10 text-center dark:bg-secondary-light">
+    return <footer className="bg-white mt-auto flex flex-col items-center py-10 text-center dark:bg-secondary">
         <div className="container flex flex-col items-center space-y-10">
             <div className="w-full flex">
                 <hr className="border-0 mx-10 w-full h-1 bg-slate-200 rounded-full md:mx-20 dark:opacity-20" />

@@ -8,36 +8,9 @@ const nextPWA = require('next-pwa')
 /**
  * @type {import('next').NextConfig}
  */
-const config = {
-    reactStrictMode: true,
+module.exports = {
+    reactStrictMode: false,
     images: {
         domains: ['pbs.twimg.com']
     },
-    webpack: config => {
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: [
-                {
-                    loader: '@svgr/webpack',
-                    options: {
-                        typescript: true,
-                        svgoConfig: {
-                            plugins: []
-                        }
-                    }
-                }
-            ],
-            issuer: {
-                and: [/\.(js|ts)x?$/]
-            }
-        })
-
-        return config
-    }
 }
-
-module.exports = nextPWA({...config, ...{
-    pwa: {
-        dest: 'public'
-    }
-}})

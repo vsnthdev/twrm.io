@@ -5,25 +5,24 @@
  *  Created On 17 March 2022
  */
 
+import { LocalStorage, LocalKey } from 'ts-localstorage'
 import { Dispatch, SetStateAction, useState } from 'react'
-import { applyTheme, cleanLocalStorage, listenForThemeChange } from '../../utils/index'
+import { applyTheme, cleanLocalStorage,listenForThemeChange } from '../../utils/index'
+import { config } from '../../utils/config'
 
 export interface SettingsState {
     isOpen: boolean
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 
-    theme: string
-    setTheme: (value: string) => void
+    theme: number
+    setTheme: (value: number) => void
 
-    autoCopy: string
-    setAutoCopy: (value: string) => void
-
-    reducedMotion: string
-    setReducedMotion: (value: string) => void
+    autoCopy: boolean
+    setAutoCopy: (value: boolean) => void
 }
 
-export const saveOnLocalStorage = (key: string, setter: Dispatch<SetStateAction<string>>, functions?: Array<(value: string) => any>) => {
-    return (value: string) => {
+export const saveOnLocalStorage = (key: LocalKey<any>, setter: Dispatch<SetStateAction<any>>, functions?: Array<(value: any) => any>) => {
+    return (value: any) => {
         // fire the setter function
         setter(value)
 
@@ -32,23 +31,20 @@ export const saveOnLocalStorage = (key: string, setter: Dispatch<SetStateAction<
             for (const func of functions) func(value)
 
         // set in localStorage
-        localStorage.setItem(key, value)
+        LocalStorage.setItem(key, value)
     }
 }
 
 export const initSettingsState = (): SettingsState => {
     const [ isOpen, setIsOpen ] = useState(false)
 
-    const [ theme, updateTheme ] = useState('dark')
-    const setTheme = saveOnLocalStorage('theme', updateTheme, [ applyTheme ])
+    const [ theme, updateTheme ] = useState(0)
+    const setTheme = saveOnLocalStorage(config.theme, updateTheme, [ applyTheme ])
 
-    const [ autoCopy, updateAutoCopy ] = useState('false')
-    const setAutoCopy = saveOnLocalStorage('autoCopy', updateAutoCopy)
+    const [ autoCopy, updateAutoCopy ] = useState(false)
+    const setAutoCopy = saveOnLocalStorage(config.autoCopy, updateAutoCopy)
 
-    const [ reducedMotion, updateReducedMotion ] = useState('false')
-    const setReducedMotion = saveOnLocalStorage('reducedMotion', updateReducedMotion)
-
-    return { isOpen, setIsOpen, theme, setTheme, autoCopy, setAutoCopy, reducedMotion, setReducedMotion }
+    return { isOpen, setIsOpen, theme, setTheme, autoCopy, setAutoCopy }
 }
 
 export const openSettings = (state: SettingsState) => state.setIsOpen(true)
@@ -59,9 +55,8 @@ export const populateState = (state: SettingsState): void => {
     cleanLocalStorage()
     listenForThemeChange()
 
-    const getStr = (key: string, def: string) => localStorage.getItem(key) || def
-    
-    state.setTheme(getStr('theme', 'Auto'))
-    state.setAutoCopy(getStr('autoCopy', 'true'))
-    state.setReducedMotion(getStr('reducedMotion', 'false'))
+    // load the values from LocalStorage to React state
+    state.setTheme(LocalStorage.getItem(config.theme) as number)
+    state.setAutoCopy(LocalStorage.getItem(config.autoCopy) as boolean)
 }
+

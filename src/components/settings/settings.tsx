@@ -3,23 +3,19 @@
  *  Created On 17 March 2022
  */
 
-import { MutableRefObject, ReactElement, useEffect, useRef } from 'react'
+import { MutableRefObject, ReactElement, useEffect } from 'react'
 import { SettingsState, closeSettings, populateState } from './functions'
-import animate from './animate'
 
 interface SettingsParams {
     state: SettingsState
     cog: MutableRefObject<null>
 }
 
-export const Settings = ({state, cog}: SettingsParams): ReactElement => {
-    const { isOpen, theme, setTheme, autoCopy, setAutoCopy, reducedMotion, setReducedMotion } = state
+export const Settings = ({state}: SettingsParams): ReactElement => {
+    const { isOpen, theme, setTheme, autoCopy, setAutoCopy } = state
 
     // populate the state on the client side
     useEffect(() => populateState(state), [])
-
-    // animations for opening & closing
-    useEffect(() => animate({ cog, isOpen }), [ isOpen ])
 
     return <div className={`fixed z-40 inset-0 overflow-y-auto transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'} ${isOpen || 'pointer-events-none'}`}>
          <div className="flex justify-center items-center min-h-screen pt-4 px-4 pb-20">
@@ -46,10 +42,10 @@ export const Settings = ({state, cog}: SettingsParams): ReactElement => {
                         <div className="flex items-center space-x-2">
                             <label className="w-full" htmlFor="cmbTheme">Theme</label>
                             <div className="group relative flex justify-end w-full items-center">
-                                <select className="bg-white appearance-none w-full px-3 py-[0.4rem] border-2 text-sm outline-none transition-colors border-slate-200 focus:border-primary rounded-md dark:bg-slate-900 dark:border-slate-700 dark:focus:border-primary" value={theme} onChange={e => setTheme(e.target.value)}>
-                                    <option>Auto</option>
-                                    <option>Light</option>
-                                    <option>Dark</option>
+                                <select className="bg-white appearance-none w-full px-3 py-[0.4rem] border-2 text-sm outline-none transition-colors border-slate-200 focus:border-primary rounded-md dark:bg-slate-900 dark:border-slate-700 dark:focus:border-primary" value={theme} onChange={e => setTheme(e.target.selectedIndex)}>
+                                    <option value={0}>Auto</option>
+                                    <option value={1}>Light</option>
+                                    <option value={2}>Dark</option>
                                 </select>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="absolute pointer-events-none stroke-slate-300 h-5 aspect-square mr-3 transition-stroke group-focus-within:stroke-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -62,18 +58,7 @@ export const Settings = ({state, cog}: SettingsParams): ReactElement => {
                             <label className="w-full" htmlFor="swAutoCopy">Auto copy</label>
                             <div className="flex justify-center">
                                 <label className="relative flex justify-between items-center group">
-                                    <input type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" checked={autoCopy == 'true' ? true : false} onChange={e => setAutoCopy(e.target.checked.toString())} />
-                                    <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5 dark:bg-slate-900 dark:after:border-white/70 dark:peer-checked:after:border-white"></span>
-                                </label>
-                            </div>
-                        </div>
-
-                        {/* enable or disable animations */}
-                        <div className="flex items-center space-y-2">
-                            <label className="w-full" htmlFor="swReducedMotion">Reduced motion</label>
-                            <div className="flex justify-center">
-                                <label className="relative flex justify-between items-center group">
-                                    <input id="swReducedMotion" type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" checked={reducedMotion == 'true' ? true : false} onChange={e => setReducedMotion(e.target.checked.toString())} />
+                                    <input type="checkbox" className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" checked={autoCopy} onChange={e => setAutoCopy(e.target.checked)} />
                                     <span className="w-14 h-8 flex items-center flex-shrink-0 p-2 bg-slate-300 rounded-full duration-100 ease-in peer-checked:bg-primary after:w-5 after:h-5 after:border-4 after:border-white after:rounded-full after:shadow-md after:duration-100 peer-checked:after:translate-x-5 dark:bg-slate-900 dark:after:border-white/70 dark:peer-checked:after:border-white"></span>
                                 </label>
                             </div>

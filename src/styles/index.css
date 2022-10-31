@@ -14,9 +14,16 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+/* Next.js container styles */
+#__next {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Logo styles */
 header .dot {
-        opacity: 0.5;
+    opacity: 0.5;
 }
 
 footer .typo {

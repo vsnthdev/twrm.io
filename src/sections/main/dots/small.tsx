@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
+/*
+ *  Small size dot matrix for bachground.
+ *  Created On 31 October 2022
+ */
+
+import { ReactElement } from 'react'
+
+export const DotsSmall = (): ReactElement => <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 208 205">
     <defs>
         <clipPath id="a">
@@ -8,7 +14,7 @@
                   fill="none" />
         </clipPath>
     </defs>
-    <g clip-path="url(#a)">
+    <g clipPath="url(#a)">
         <g transform="translate(-833 -238)">
             <circle cx="3"
                     cy="3"

@@ -3,13 +3,13 @@
  *  Created On 21 March 2022
  */
 
-import { ReactElement, useState } from 'react'
-import FailedIcon from './icons/failed.svg'
-import SuccessIcon from './icons/success.svg'
-import TypingIcon from './icons/typing.svg'
+import { Failed } from './icons/failed'
+import { Typing } from './icons/typing'
+import { Success } from './icons/success'
 import { copyToClipboard } from './functions'
-import { SettingsState } from '../settings/functions'
+import { ReactElement, useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
+import { SettingsState } from '../settings/functions'
 
 export const MagicBox = ({state}: {state: SettingsState}): ReactElement => {
     // the state of the copy process
@@ -35,18 +35,18 @@ export const MagicBox = ({state}: {state: SettingsState}): ReactElement => {
 
     return <div id="magicBox" className="relative flex w-[70vw] rounded-xl shadow-box max-w-2xl md:w-[80vw] backdrop-blur-sm bg-white/30 md:text-lg dark:bg-slate-900/30">
         {/* the input where the user enters */}
-        <input autoFocus autoCorrect="off" autoComplete="off" autoCapitalize="false" type="text" className="bg-white font-medium m-2 w-full pl-6 pr-16 py-4 rounded-lg outline-none text-slate-600 placeholder:text-slate-400 placeholder:overflow-visible dark:bg-secondary dark:text-white dark:placeholder:text-slate-500" placeholder="@mention, #hashtag or URL" value={text} onChange={e => {setText(e.target.value); setStatus(-1); if (state.autoCopy == 'true') autoCopy(e.target.value) }} onKeyUp={triggerCopy} />
+        <input autoFocus autoCorrect="off" autoComplete="off" autoCapitalize="false" type="text" className="bg-white font-medium m-2 w-full pl-6 pr-16 py-4 rounded-lg outline-none text-slate-600 placeholder:text-slate-400 placeholder:overflow-visible dark:bg-secondary dark:text-white dark:placeholder:text-slate-500" placeholder="@mention, #hashtag or URL" value={text} onChange={e => {setText(e.target.value); setStatus(-1); if (state.autoCopy) autoCopy(e.target.value) }} onKeyUp={triggerCopy} />
 
         <div className="absolute pointer-events-none right-0 h-full px-8 flex items-center">
             {/* failed icon */}
-            <div className={`absolute w-5 right-8 top-[27px] aspect-square text-[#ef4444] transition-opacity ${status == 1 ? 'opacity-100' : 'opacity-0'}`}><FailedIcon/></div>
+            <div className={`absolute w-5 right-8 top-[27px] aspect-square text-[#ef4444] transition-opacity ${status == 1 ? 'opacity-100' : 'opacity-0'}`}><Failed/></div>
             
             {/* success icon */}
-            <div className={`absolute w-5 right-8 top-[27px] aspect-square text-primary transition-opacity ${status == 0 ? 'opacity-100' : 'opacity-0'}`}><SuccessIcon/></div>
+            <div className={`absolute w-5 right-8 top-[27px] aspect-square text-primary transition-opacity ${status == 0 ? 'opacity-100' : 'opacity-0'}`}><Success/></div>
 
             {/* typing indicator */}
-            <div className={`absolute right-8 top-[27px] transition-opacity ${(status == -1 && state.autoCopy == 'true') ? 'opacity-100' : 'opacity-0'}`}>
-                <div className={`w-5 aspect-square transition-colors duration-500 ${getTypingIndicatorColor()}`}><TypingIcon/></div>
+            <div className={`absolute right-8 top-[27px] transition-opacity ${(status == -1 && state.autoCopy) ? 'opacity-100' : 'opacity-0'}`}>
+                <div className={`w-5 aspect-square transition-colors duration-500 ${getTypingIndicatorColor()}`}><Typing/></div>
             </div>
         </div>
     </div>
