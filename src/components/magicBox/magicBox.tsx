@@ -33,11 +33,11 @@ export const MagicBox = ({state}: {state: SettingsState}): ReactElement => {
         await copyToClipboard(value, setStatus)
     }, 750)
 
-    return <div id="magicBox" className="relative flex w-[70vw] rounded-xl shadow-box max-w-2xl md:w-[80vw] backdrop-blur-sm bg-white/30 md:text-lg dark:bg-slate-900/30">
+    return <div id='magicBox' className='relative flex w-[70vw] rounded-xl shadow-box max-w-2xl md:w-[80vw] backdrop-blur-sm bg-white/30 md:text-lg dark:bg-slate-900/30'>
         {/* the input where the user enters */}
-        <input autoFocus autoCorrect="off" autoComplete="off" autoCapitalize="false" type="text" className="bg-white font-medium m-2 w-full pl-6 pr-16 py-4 rounded-lg outline-none text-slate-600 placeholder:text-slate-400 placeholder:overflow-visible dark:bg-secondary dark:text-white dark:placeholder:text-slate-500" placeholder="@mention, #hashtag or URL" value={text} onChange={e => {setText(e.target.value); setStatus(-1); if (state.autoCopy) autoCopy(e.target.value) }} onKeyUp={triggerCopy} />
+        <input autoFocus autoCorrect='false' autoComplete='off' autoCapitalize='false' type='text' className='bg-white font-medium m-2 w-full pl-6 pr-16 py-4 rounded-lg outline-none text-slate-600 placeholder:text-slate-400 placeholder:overflow-visible dark:bg-secondary dark:text-white dark:placeholder:text-slate-500' placeholder='@mention, #hashtag or URL' value={text} onChange={e => {setText(e.target.value); setStatus(-1); if (state.autoCopy) autoCopy(e.target.value) }} onKeyUp={triggerCopy} />
 
-        <div className="absolute pointer-events-none right-0 h-full px-8 flex items-center">
+        <div className='absolute pointer-events-none right-0 h-full px-8 flex items-center'>
             {/* failed icon */}
             <div className={`absolute w-5 right-8 top-[27px] aspect-square text-[#ef4444] transition-opacity ${status == 1 ? 'opacity-100' : 'opacity-0'}`}><Failed/></div>
             

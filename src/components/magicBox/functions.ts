@@ -3,7 +3,7 @@
  *  Created On 21 March 2022
  */
 
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction } from 'react'
 
 // this function contains in invisible character
 // added to the replace Regex.
@@ -18,9 +18,10 @@ export const copyToClipboard = async (value: string, setStatus: Dispatch<SetStat
     const wrapSetStatus = (value: number) => {
         setStatus(value)
 
-        setTimeout(() => {
-            setStatus(-1)
-        }, 1000)
+        if (value != 0)
+            setTimeout(() => {
+                setStatus(-1)
+            }, 1000)
     }
 
     try {
