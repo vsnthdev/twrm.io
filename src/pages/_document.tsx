@@ -13,9 +13,12 @@ export default () => <Html className='dark'>
     </Head>
     <body className='flex flex-col font-sans bg-slate-100 text-secondary selection:bg-primary/10 dark:bg-secondary dark:text-white dark:selection:bg-white/25'>
         {/* specific page content */}
-        <Main/>
+        <Main />
 
         {/* additional scripts to be injected by Next.js */}
-        <NextScript/>
+        <NextScript />
+
+        {/* Microanalytics tracking code */}
+        <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
     </body>
 </Html>
